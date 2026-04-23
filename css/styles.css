@@ -328,7 +328,7 @@ p:last-child { margin-bottom: 0; }
     scroll-snap-align: center;
   }
 }
-.benefit-card { padding: 24px 20px; display: flex; flex-direction: column; align-items: center; background: var(--white); border: 2px solid var(--blue-light); border-radius: var(--radius); box-shadow: var(--shadow); transition: transform var(--transition), box-shadow var(--transition); }
+.benefit-card { padding: 24px 20px; display: flex; flex-direction: column; align-items: center; background: var(--white); border: 2px solid var(--blue-light); border-radius: var(--radius); box-shadow: var(--shadow); transition: transform var(--transition), box-shadow var(--transition); scroll-snap-align: center; }
 .benefit-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: var(--blue); }
 .benefit-card img { width: 72px; height: 72px; object-fit: contain; margin: 0 auto 14px; display: block; flex-shrink: 0; }
 .benefit-card h4 { font-size: 0.92rem; font-weight: 800; color: var(--blue); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.03em; text-align: center; }
