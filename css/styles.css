@@ -689,6 +689,10 @@ p:last-child { margin-bottom: 0; }
 .map-switch-btn.active { background: var(--blue); color: var(--white); border-color: var(--blue); }
 .map-switch-btn:not(.active) { background: transparent; color: var(--blue); border-color: var(--blue); }
 
+@media (max-width: 640px) {
+  .map-switch-btn { padding: 8px 14px; font-size: 0.72rem; }
+}
+
 /* TEAM SLIDER */
 .team-slider-wrap { overflow: hidden; margin-bottom: 24px; }
 .team-track { display: flex; gap: 24px; transition: transform 0.5s ease; }
