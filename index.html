@@ -1277,5 +1277,10 @@
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 
+<!-- Photo Lightbox Modal -->
+  <div id="photo-modal" style="display:none; position:fixed; inset:0; z-index:9998; background:rgba(0,0,0,0.9); align-items:center; justify-content:center; cursor:pointer;">
+    <img id="photo-modal-img" src="" alt="" style="max-width:90vw; max-height:90vh; border-radius:8px; box-shadow:0 8px 48px rgba(0,0,0,0.6); object-fit:contain;">
+    <button id="photo-modal-close" aria-label="Close photo" style="position:absolute; top:20px; right:20px; background:rgba(255,255,255,0.15); border:none; color:#fff; font-size:1.4rem; width:44px; height:44px; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center;">&#10005;</button>
+  </div>
 </body>
 </html>

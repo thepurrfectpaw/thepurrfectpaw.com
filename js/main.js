@@ -461,4 +461,37 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  /* PHOTO LIGHTBOX */
+  var photoModal = document.getElementById('photo-modal');
+  var photoModalImg = document.getElementById('photo-modal-img');
+  var photoModalClose = document.getElementById('photo-modal-close');
+
+  document.querySelectorAll('.gallery-strip-track img').forEach(function(img) {
+    img.style.cursor = 'pointer';
+    img.addEventListener('click', function() {
+      photoModalImg.src = img.src;
+      photoModalImg.alt = img.alt;
+      photoModal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closePhotoModal() {
+    photoModal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  if (photoModalClose) photoModalClose.addEventListener('click', function(e) {
+    e.stopPropagation();
+    closePhotoModal();
+  });
+
+  if (photoModal) photoModal.addEventListener('click', function(e) {
+    if (e.target !== photoModalImg) closePhotoModal();
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && photoModal.style.display === 'flex') closePhotoModal();
+  });
+  
 });
