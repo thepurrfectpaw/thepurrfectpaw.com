@@ -121,6 +121,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     track.addEventListener('mouseenter', function () { clearInterval(autoSlide); });
 
+    var revTouchStartX = 0;
+    track.addEventListener('touchstart', function (e) {
+      revTouchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    track.addEventListener('touchend', function (e) {
+      var diff = revTouchStartX - e.changedTouches[0].screenX;
+      if (Math.abs(diff) > 50) {
+        clearInterval(autoSlide);
+        if (diff > 0) goTo(current + 1);
+        else goTo(current - 1);
+      }
+    }, { passive: true });
+
     window.addEventListener('resize', function () {
       perView = window.innerWidth < 640 ? 1 : window.innerWidth < 900 ? 2 : 3;
       total = Math.ceil(cards.length / perView);
@@ -285,6 +298,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function update() {
+      track.style.transition = 'transform 0.6s ease';
       track.style.transform = 'translateX(-' + (pos * getSlideWidth()) + 'px)';
     }
 
@@ -297,6 +311,29 @@ document.addEventListener('DOMContentLoaded', function () {
       pos = pos < total - 4 ? pos + 1 : 0;
       update();
     });
+
+    // Auto-slide every 5 seconds
+    var galleryAuto = setInterval(function() {
+      pos = pos < total - 4 ? pos + 1 : 0;
+      update();
+    }, 5000);
+
+    track.addEventListener('mouseenter', function() { clearInterval(galleryAuto); });
+
+    // Touch swipe
+    var galTouchStartX = 0;
+    track.addEventListener('touchstart', function(e) {
+      galTouchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    track.addEventListener('touchend', function(e) {
+      var diff = galTouchStartX - e.changedTouches[0].screenX;
+      if (Math.abs(diff) > 50) {
+        clearInterval(galleryAuto);
+        if (diff > 0) { pos = pos < total - 4 ? pos + 1 : 0; }
+        else { pos = pos > 0 ? pos - 1 : total - 4; }
+        update();
+      }
+    }, { passive: true });
   }
 
   initGallery('gallery1-track', 'gallery1-prev', 'gallery1-next');
@@ -487,8 +524,17 @@ document.addEventListener('DOMContentLoaded', function () {
     if (teamPrev) teamPrev.addEventListener('click', function() { goToTeam(teamCurrent - 1); });
     if (teamNext) teamNext.addEventListener('click', function() { goToTeam(teamCurrent + 1); });
 
-    var teamAuto = setInterval(function() { goToTeam(teamCurrent + 1); }, 5000);
-    if (teamTrack) teamTrack.addEventListener('mouseenter', function() { clearInterval(teamAuto); });
+    var teamTouchStartX = 0;
+    teamTrack.addEventListener('touchstart', function(e) {
+      teamTouchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    teamTrack.addEventListener('touchend', function(e) {
+      var diff = teamTouchStartX - e.changedTouches[0].screenX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) goToTeam(teamCurrent + 1);
+        else goToTeam(teamCurrent - 1);
+      }
+    }, { passive: true });
 
     window.addEventListener('resize', function() {
       teamPerView = window.innerWidth < 400 ? 1 : window.innerWidth < 640 ? 2 : window.innerWidth < 900 ? 3 : 5;
