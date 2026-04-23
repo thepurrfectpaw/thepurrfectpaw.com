@@ -582,12 +582,13 @@ p:last-child { margin-bottom: 0; }
   .hero-video-wrap { order: -1; }
   .hiw-grid { grid-template-columns: 1fr 1fr; }
   .pricing-grid { grid-template-columns: 1fr 1fr; }
-  .area-content { grid-template-columns: 1fr; }
-  .area-map-wrap { order: -1; }
+  .area-content { grid-template-columns: 1fr; display: flex; flex-direction: column; }
+  .area-info { order: 1; }
+  .area-maps { order: 2; width: 100%; max-width: 100%; }
+  .map-btn-group { order: 3; }
   .contact-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .benefits-grid { grid-template-columns: repeat(2, 1fr); padding: 20px; }
-  
 }
 @media (max-width: 640px) {
   .section { padding: 52px 0; }
@@ -688,9 +689,10 @@ p:last-child { margin-bottom: 0; }
 
 .map-switch-btn.active { background: var(--blue); color: var(--white); border-color: var(--blue); }
 .map-switch-btn:not(.active) { background: transparent; color: var(--blue); border-color: var(--blue); }
+.map-btn-group { display: flex; gap: 8px; margin-top: 16px; flex-wrap: nowrap; }
 
 @media (max-width: 640px) {
-  .map-switch-btn { padding: 8px 14px; font-size: 0.72rem; }
+  .map-switch-btn { padding: 8px 10px; font-size: 0.68rem; letter-spacing: 0.03em; flex: 1; text-align: center; }
 }
 
 /* TEAM SLIDER */
@@ -890,13 +892,26 @@ p:last-child { margin-bottom: 0; }
 #contact-form button[type="submit"] { background: var(--white); color: var(--blue-dark); border-color: var(--white); }
 #contact-form button[type="submit"]:hover { background: var(--blue-light); color: var(--blue-dark); border-color: var(--blue-light); }
 
-.map-thumbnails { display: none; margin-top: 16px; border-radius: var(--radius); overflow: hidden; border: 2px solid var(--blue); }
-.map-thumb { width: 100%; display: block; }
+.map-iframe-wrap {
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+  border-radius: var(--radius);
+  border: 3px solid var(--blue);
+}
 @media (max-width: 900px) {
-  .map-thumbnails { display: block; }
-  .area-maps { display: none; }
+  .map-iframe-wrap { height: 380px; }
+  .area-maps { display: block !important; }
+}
+@media (max-width: 480px) {
+  .map-iframe-wrap { height: 300px; }
 }
 
+@media (max-width: 768px) {
+  #hero video {
+    autoplay: none; /* handled by JS below */
+  }
+}
 /* ============================================================
    SCROLL TO TOP BUTTON
    ============================================================ */
@@ -968,6 +983,7 @@ p:last-child { margin-bottom: 0; }
   flex-shrink: 0;
 }
 .benefits-arrow:hover { background: rgba(255,255,255,0.2); border-color: var(--white); }
+
 
 /* ============================================================
    DARK MODE

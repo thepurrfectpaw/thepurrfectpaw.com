@@ -117,9 +117,6 @@
   <!-- =====================================================
        Security Headers (via meta — full headers set by GitHub Pages _headers file)
        ===================================================== -->
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
-  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 
   <!-- =====================================================
        Favicon (replace with actual favicon files)
@@ -235,7 +232,7 @@
           <video autoplay muted loop playsinline preload="auto"
             aria-hidden="true"
             x-webkit-airplay="deny"
-            poster="assets/images/gallery-1.webp">
+            poster="assets/images/video-static.webp">
             <source src="assets/videos/commercial.mp4" type="video/mp4">
           </video>
           <div class="video-play-btn" aria-label="Play video">&#9654;</div>
@@ -740,10 +737,8 @@
     <div class="container">
       <div class="area-content">
         <div class="area-maps">
-          <div class="area-map-item" style="padding:0; border-radius:8px; overflow:hidden;">
-            <div style="height:500px; overflow:hidden; position:relative;">
-              <iframe id="area-map-iframe" src="https://www.google.com/maps/d/u/0/embed?mid=1mmcftffu2-iRQPPUZCgmcjRqUeQ&ehbc=2E312F&ll=31.38561,-97.3012984&z=9" width="100%" height="560" style="border:0; display:block; position:absolute; top:-60px;" allowfullscreen loading="lazy"></iframe>
-            </div>
+          <div class="map-iframe-wrap">
+            <iframe id="area-map-iframe" src="https://www.google.com/maps/d/u/0/embed?mid=1mmcftffu2-iRQPPUZCgmcjRqUeQ&ehbc=2E312F&ll=31.38561,-97.3012984&z=9" width="100%" height="560" style="border:0; display:block; position:absolute; top:-60px;" allowfullscreen loading="lazy"></iframe>
           </div>
         </div>
         <div class="area-info">
@@ -777,7 +772,7 @@
 
           <p style="font-size:0.9rem; color: var(--text-light);"><em>*$1 per mile outside Blue Zone</em></p>
 
-          <div style="display:flex; gap:12px; margin-top:16px; flex-wrap:wrap;">
+          <div class="map-btn-group">
             <button class="btn btn-outline map-switch-btn active" data-map="overview">Overview</button>
             <button class="btn btn-outline map-switch-btn" data-map="waco">Waco Area</button>
             <button class="btn btn-outline map-switch-btn" data-map="temple">Temple Area</button>

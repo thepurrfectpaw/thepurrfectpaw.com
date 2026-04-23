@@ -225,13 +225,20 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  /* HERO AUTOPLAY FALLBACK */
+  /* HERO AUTOPLAY — desktop only */
   var heroVid = document.querySelector('#hero video');
   if (heroVid) {
-    heroVid.play().catch(function() {
-      heroVid.muted = true;
-      heroVid.play();
-    });
+    if (window.innerWidth > 768) {
+      heroVid.play().catch(function() {
+        heroVid.muted = true;
+        heroVid.play();
+      });
+    } else {
+      heroVid.removeAttribute('autoplay');
+      heroVid.pause();
+      heroVid.preload = 'none';
+      heroVid.load();
+    }
   }
 
   /* VIDEO MODAL */
