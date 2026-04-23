@@ -629,25 +629,40 @@ document.addEventListener('DOMContentLoaded', function () {
   var benefitsNext = document.getElementById('benefits-next');
 
   if (benefitsPrev && benefitsNext && benefitsGrid) {
-    benefitsPrev.addEventListener('click', function() {
-      var cards = benefitsGrid.querySelectorAll('.benefit-card');
-      if (!cards.length) return;
-      var cardWidth = cards[0].offsetWidth + 16;
-      if (benefitsGrid.scrollLeft <= 10) {
-        benefitsGrid.scrollTo({ left: benefitsGrid.scrollWidth, behavior: 'smooth' });
-      } else {
-        benefitsGrid.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+    var benefitIndex = 0;
+    var benefitCards = benefitsGrid.querySelectorAll('.benefit-card');
+    var benefitTotal = benefitCards.length;
+
+    function goToBenefit(idx) {
+      if (!benefitCards.length) return;
+      benefitIndex = (idx + benefitTotal) % benefitTotal;
+      var cardWidth = benefitCards[0].offsetWidth + 16;
+      benefitsGrid.scrollTo({ left: benefitIndex * cardWidth, behavior: 'smooth' });
+      if (benefitsDots) {
+        benefitsDots.querySelectorAll('.benefits-dot').forEach(function(d, i) {
+          d.classList.toggle('active', i === benefitIndex);
+        });
       }
+    }
+
+    benefitsPrev.addEventListener('click', function() {
+      goToBenefit(benefitIndex - 1);
     });
+
     benefitsNext.addEventListener('click', function() {
-      var cards = benefitsGrid.querySelectorAll('.benefit-card');
-      if (!cards.length) return;
-      var cardWidth = cards[0].offsetWidth + 16;
-      var maxScroll = benefitsGrid.scrollWidth - benefitsGrid.clientWidth;
-      if (benefitsGrid.scrollLeft >= maxScroll - 10) {
-        benefitsGrid.scrollTo({ left: 0, behavior: 'smooth' });
-      } else {
-        benefitsGrid.scrollBy({ left: cardWidth, behavior: 'smooth' });
+      goToBenefit(benefitIndex + 1);
+    });
+
+    /* sync dot tracking on native swipe */
+    benefitsGrid.addEventListener('scroll', function() {
+      if (!benefitCards.length) return;
+      var cardWidth = benefitCards[0].offsetWidth + 16;
+      var nearest = Math.round(benefitsGrid.scrollLeft / cardWidth);
+      benefitIndex = nearest;
+      if (benefitsDots) {
+        benefitsDots.querySelectorAll('.benefits-dot').forEach(function(d, i) {
+          d.classList.toggle('active', i === nearest);
+        });
       }
     });
   }
