@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monthly Giveaway | The Purr-fect Paw | Waco, TX</title>
+  <meta name="description" content="Enter to win a $50 gift card to The Purr-fect Paw + $50 to a local Waco restaurant! Monthly giveaway for Central Texas pet owners.">
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       GIVEAWAY PAGE — thepurrfectpaw.com/giveaway.html
+       Monthly — update GIVEAWAY_CONFIG each month
+    ============================================================ */
+    :root {
+      --blue:        #3a6fc4;
+      --blue-dark:   #2a57a0;
+      --blue-deeper: #1e3f7a;
+      --blue-bg:     #3d6dc0;
+      --blue-light:  #e8eef8;
+      --white:       #ffffff;
+      --off-white:   #f8f9fc;
+      --gray-mid:    #d8dce8;
+      --text:        #2a2d3e;
+      --text-light:  #5a607a;
+      --gold:        #f5b800;
+      --gold-dark:   #d49e00;
+      --radius:      10px;
+      --shadow:      0 2px 16px rgba(58,111,196,0.13);
+      --shadow-lg:   0 8px 40px rgba(58,111,196,0.22);
+      --font:        'Nunito', 'Helvetica Neue', Arial, sans-serif;
+      --transition:  0.22s ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); color: var(--text); background: var(--white); line-height: 1.7; overflow-x: hidden; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    h1,h2,h3,h4 { font-weight: 800; line-height: 1.2; }
+    p { margin-bottom: 1rem; color: var(--text-light); }
+    p:last-child { margin-bottom: 0; }
+
+    /* TOPBAR */
+    #topbar { background: var(--blue-dark); color: var(--white); padding: 8px 0; font-size: 0.83rem; font-weight: 600; }
+    .topbar-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    #topbar a { color: var(--white); }
+    #topbar a:hover { text-decoration: underline; }
+
+    /* NAVBAR */
+    #navbar { background: var(--white); border-bottom: 2px solid var(--blue-light); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(58,111,196,0.1); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 16px; }
+    .nav-logo img { height: 52px; width: auto; }
+    .btn { display: inline-block; padding: 11px 24px; border-radius: var(--radius); font-family: var(--font); font-size: 0.8rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; cursor: pointer; transition: all var(--transition); border: 2px solid transparent; white-space: nowrap; }
+    .btn-primary { background: var(--blue); color: var(--white); border-color: var(--blue); }
+    .btn-primary:hover { background: var(--blue-dark); border-color: var(--blue-dark); transform: translateY(-1px); }
+    .btn-outline { background: transparent; color: var(--blue); border-color: var(--blue); }
+    .btn-outline:hover { background: var(--blue); color: var(--white); transform: translateY(-1px); }
+    .btn-sm { padding: 8px 18px; font-size: 0.75rem; }
+    .btn-gold { background: var(--gold); color: var(--blue-deeper); border-color: var(--gold); font-size: 1rem; padding: 16px 40px; }
+    .btn-gold:hover { background: var(--gold-dark); border-color: var(--gold-dark); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(245,184,0,0.35); }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* ============================================================
+       HERO / PRIZE SECTION
+    ============================================================ */
+    #hero {
+      background: var(--blue-bg);
+      padding: 64px 0 56px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/images/logo.png');
+      background-size: 160px auto;
+      background-repeat: repeat;
+      opacity: 0.06;
+      pointer-events: none;
+    }
+    #hero .container { position: relative; z-index: 1; }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 4px 16px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+
+    #hero h1 {
+      color: var(--white);
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      margin-bottom: 10px;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    }
+
+    #hero .hero-sub {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.82);
+      max-width: 580px;
+      margin: 0 auto 36px;
+    }
+
+    /* PRIZE CARDS */
+    .prize-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .prize-card {
+      background: rgba(255,255,255,0.13);
+      border: 2px solid rgba(255,255,255,0.28);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      min-width: 200px;
+      text-align: center;
+      backdrop-filter: blur(4px);
+    }
+    .prize-card .prize-icon { font-size: 2.2rem; display: block; margin-bottom: 10px; }
+    .prize-card .prize-amount {
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+      display: block;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    }
+    .prize-card .prize-label { font-size: 0.8rem; color: rgba(255,255,255,0.8); font-weight: 700; margin-top: 6px; display: block; }
+    .prize-plus { font-size: 2rem; font-weight: 900; color: rgba(255,255,255,0.5); }
+
+    /* COUNTDOWN */
+    .countdown-wrap { margin-bottom: 36px; }
+    .countdown-label {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 14px;
+    }
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .countdown-unit {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 8px;
+      padding: 16px 20px;
+      min-width: 76px;
+      text-align: center;
+    }
+    .countdown-unit .num {
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1;
+      display: block;
+      font-variant-numeric: tabular-nums;
+    }
+    .countdown-unit .lbl {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin-top: 4px;
+      display: block;
+    }
+
+    /* SHARE NUDGE */
+    .share-nudge {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: var(--radius);
+      padding: 18px 28px;
+      max-width: 560px;
+      margin: 0 auto;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.6;
+    }
+    .share-nudge strong { color: var(--white); }
+    .share-actions { display: flex; justify-content: center; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 18px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border: none;
+      transition: all var(--transition);
+    }
+    .share-btn-fb { background: #1877f2; color: var(--white); }
+    .share-btn-fb:hover { background: #1260c7; transform: translateY(-1px); }
+    .share-btn-copy { background: rgba(255,255,255,0.18); color: var(--white); border: 1px solid rgba(255,255,255,0.3); }
+    .share-btn-copy:hover { background: rgba(255,255,255,0.28); }
+
+    /* ============================================================
+       ENTRY FORM SECTION
+    ============================================================ */
+    #enter {
+      padding: 72px 0;
+      background: var(--off-white);
+      position: relative;
+      overflow: hidden;
+    }
+    #enter::before { content: ''; position: absolute; inset: 0; background-image: url('assets/images/logo.png'); background-size: 160px auto; background-repeat: repeat; opacity: 0.03; pointer-events: none; }
+
+    .form-wrap {
+      background: var(--white);
+      border: 1px solid var(--gray-mid);
+      border-radius: 14px;
+      box-shadow: var(--shadow-lg);
+      padding: 44px 40px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .form-header { text-align: center; margin-bottom: 32px; }
+    .form-header .section-label {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--blue);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .form-header h2 { font-size: 1.7rem; color: var(--blue); margin-bottom: 8px; }
+    .form-header p { font-size: 0.92rem; }
+
+    .form-divider {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      border-bottom: 2px solid var(--blue-light);
+      padding-bottom: 8px;
+      margin: 28px 0 20px;
+    }
+
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 20px; }
+    .form-grid .full { grid-column: span 2; }
+
+    .form-group { display: flex; flex-direction: column; gap: 5px; }
+    .form-group label {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 11px 14px;
+      background: var(--off-white);
+      border: 1.5px solid var(--gray-mid);
+      border-radius: 7px;
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 0.93rem;
+      transition: border-color var(--transition), background var(--transition);
+    }
+    .form-group input:focus, .form-group select:focus {
+      outline: none;
+      border-color: var(--blue);
+      background: var(--white);
+    }
+    .form-group input.error { border-color: #e74c3c; }
+
+    /* PET COUNTERS */
+    .pet-counters { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 4px; }
+    .pet-counter {
+      flex: 1;
+      min-width: 120px;
+      background: var(--off-white);
+      border: 1.5px solid var(--gray-mid);
+      border-radius: 8px;
+      padding: 12px 14px;
+      text-align: center;
+      transition: border-color var(--transition);
+    }
+    .pet-counter:focus-within { border-color: var(--blue); }
+    .pet-counter .pet-emoji { font-size: 1.4rem; display: block; margin-bottom: 4px; }
+    .pet-counter .pet-name { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); display: block; margin-bottom: 10px; }
+    .pet-stepper { display: flex; align-items: center; justify-content: center; gap: 10px; }
+    .pet-stepper-btn {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      border: 1.5px solid var(--blue);
+      background: transparent;
+      color: var(--blue);
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      transition: all var(--transition);
+    }
+    .pet-stepper-btn:hover { background: var(--blue); color: var(--white); }
+    .pet-count-display { font-size: 1.2rem; font-weight: 900; color: var(--text); min-width: 20px; text-align: center; }
+
+    /* RADIO OPTIONS */
+    .radio-group { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+    .radio-option {
+      flex: 1;
+      min-width: 100px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      background: var(--off-white);
+      border: 1.5px solid var(--gray-mid);
+      border-radius: 7px;
+      cursor: pointer;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-light);
+      transition: all var(--transition);
+    }
+    .radio-option input[type="radio"] { accent-color: var(--blue); width: 16px; height: 16px; cursor: pointer; flex-shrink: 0; }
+    .radio-option:has(input:checked) { border-color: var(--blue); background: var(--blue-light); color: var(--blue); }
+
+    /* AREA NOTICE */
+    .area-notice {
+      background: var(--blue-light);
+      border-left: 4px solid var(--blue);
+      border-radius: 0 7px 7px 0;
+      padding: 14px 18px;
+      font-size: 0.85rem;
+      color: var(--text);
+      margin-top: 4px;
+    }
+    .area-notice strong { color: var(--blue); }
+
+    /* SUBMIT */
+    .form-submit { text-align: center; margin-top: 28px; }
+    .form-submit .btn-gold { width: 100%; max-width: 380px; font-size: 1rem; letter-spacing: 0.06em; }
+    .form-legal {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      text-align: center;
+      margin-top: 12px;
+      line-height: 1.6;
+    }
+
+    /* SUCCESS STATE */
+    .success-state {
+      display: none;
+      text-align: center;
+      padding: 20px 0;
+    }
+    .success-state .success-icon { font-size: 4rem; display: block; margin-bottom: 16px; }
+    .success-state h3 { color: var(--blue); font-size: 1.6rem; margin-bottom: 10px; }
+    .success-state p { font-size: 0.95rem; max-width: 480px; margin: 0 auto 20px; }
+
+    /* WINNER STATE */
+    #winner-state {
+      display: none;
+      background: var(--blue-bg);
+      border: 3px solid var(--gold);
+      border-radius: 14px;
+      padding: 44px 36px;
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    #winner-state h2 { color: var(--gold); font-size: 2rem; margin-bottom: 12px; }
+    #winner-state p { color: rgba(255,255,255,0.85); }
+    #winner-state .winner-name { font-size: 1.4rem; font-weight: 900; color: var(--white); }
+
+    /* ============================================================
+       HOW IT WORKS
+    ============================================================ */
+    #how-it-works { padding: 64px 0; background: var(--off-white); position: relative; overflow: hidden; }
+    #how-it-works::before { content: ''; position: absolute; inset: 0; background-image: url('assets/images/logo.png'); background-size: 160px auto; background-repeat: repeat; opacity: 0.03; pointer-events: none; }
+    #how-it-works .container { position: relative; z-index: 1; }
+    #how-it-works .section-header { text-align: center; margin-bottom: 40px; }
+    #how-it-works .section-label { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); display: block; margin-bottom: 6px; }
+    #how-it-works h2 { font-size: 1.6rem; color: var(--blue); text-transform: uppercase; letter-spacing: 0.04em; }
+
+    .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .step-card {
+      background: var(--white);
+      border: 1px solid var(--gray-mid);
+      border-radius: var(--radius);
+      padding: 28px 20px;
+      text-align: center;
+      position: relative;
+    }
+    .step-num {
+      width: 40px; height: 40px;
+      background: var(--blue);
+      color: var(--white);
+      border-radius: 50%;
+      font-size: 1rem;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 14px;
+    }
+    .step-card h4 { font-size: 0.88rem; color: var(--blue); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px; }
+    .step-card p { font-size: 0.83rem; margin: 0; color: var(--text-light); }
+
+    /* ============================================================
+       RULES SECTION
+    ============================================================ */
+    #rules { padding: 56px 0; background: var(--blue-bg); position: relative; overflow: hidden; }
+    #rules::before { content: ''; position: absolute; inset: 0; background-image: url('assets/images/logo.png'); background-size: 160px auto; background-repeat: repeat; opacity: 0.06; pointer-events: none; }
+    #rules .container { position: relative; z-index: 1; }
+    #rules .section-header { text-align: center; margin-bottom: 32px; }
+    #rules .section-label { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.9); background: rgba(255,255,255,0.15); display: inline-block; padding: 3px 12px; border-radius: 3px; margin-bottom: 6px; }
+    #rules h2 { font-size: 1.4rem; color: var(--white); text-transform: uppercase; letter-spacing: 0.04em; }
+    .rules-list { max-width: 700px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
+    .rule-item { display: flex; gap: 12px; align-items: flex-start; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 14px 18px; font-size: 0.88rem; color: rgba(255,255,255,0.85); }
+    .rule-icon { color: var(--gold); font-weight: 900; flex-shrink: 0; margin-top: 2px; }
+
+    /* FOOTER */
+    #footer { background: #1a2540; color: rgba(255,255,255,0.7); padding: 36px 0 24px; text-align: center; }
+    #footer img { height: 48px; margin: 0 auto 12px; }
+    #footer p { font-size: 0.84rem; color: rgba(255,255,255,0.65); margin-bottom: 6px; }
+    #footer a { color: rgba(255,255,255,0.75); }
+    #footer a:hover { color: var(--white); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 18px; margin-top: 18px; font-size: 0.76rem; color: rgba(255,255,255,0.45); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .form-wrap { padding: 28px 20px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .form-grid .full { grid-column: span 1; }
+      .steps-grid { grid-template-columns: 1fr 1fr; }
+      .prize-row { gap: 12px; }
+      .prize-card { min-width: 160px; padding: 20px 22px; }
+    }
+    @media (max-width: 480px) {
+      .steps-grid { grid-template-columns: 1fr; }
+      .countdown { gap: 8px; }
+      .countdown-unit { min-width: 64px; padding: 12px 14px; }
+      .countdown-unit .num { font-size: 1.8rem; }
+      #hero h1 { font-size: 1.7rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div id="topbar">
+    <div class="topbar-inner">
+      <span>&#128222; <a href="tel:+12544956578">254-495-6578</a></span>
+      <span>&#9993; <a href="mailto:Info@thepurrfectpaw.com">Info@thepurrfectpaw.com</a></span>
+      <span><a href="https://www.timetopet.com/portal/thepurrfectpaw/create-account" rel="noopener noreferrer" target="_blank">&#10003; Schedule a Free Meet &amp; Greet</a></span>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="The Purr-fect Paw — Home">
+        <img src="assets/images/logo1.png" alt="The Purr-fect Paw Logo" width="150" height="50">
+      </a>
+      <div style="display:flex; gap:8px;">
+        <a href="index.html" class="btn btn-outline btn-sm">&#8592; Back to Main Site</a>
+        <a href="#enter" class="btn btn-primary btn-sm">Enter Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section id="hero">
+    <div class="container">
+      <span class="badge">Monthly Giveaway — Waco, TX</span>
+      <h1>Win $100 in Gift Cards!</h1>
+      <p class="hero-sub">Every month we give away a $50 gift card to The Purr-fect Paw <em>and</em> a $50 gift card to a local Waco restaurant. No purchase necessary!</p>
+
+      <!-- PRIZE CARDS -->
+      <div class="prize-row">
+        <div class="prize-card">
+          <img src="assets/images/logo.png" alt="The Purr-fect Paw" style="height:64px; width:auto; margin:0 auto 10px; display:block;">
+          <span class="prize-amount">$50</span>
+          <span class="prize-label">Gift Card to<br>The Purr-fect Paw</span>
+        </div>
+        <span class="prize-plus">+</span>
+        <div class="prize-card">
+          <img src="assets/images/resturant.png" alt="Local Restaurant" style="height:64px; width:auto; margin:0 auto 10px; display:block;">
+          <span class="prize-amount">$50</span>
+          <span class="prize-label">Gift Card to a<br>Local Waco Restaurant</span>
+        </div>
+      </div>
+
+      <!-- COUNTDOWN -->
+      <div class="countdown-wrap">
+        <p class="countdown-label">Giveaway ends in</p>
+        <div class="countdown">
+          <div class="countdown-unit"><span class="num" id="cd-days">00</span><span class="lbl">Days</span></div>
+          <div class="countdown-unit"><span class="num" id="cd-hours">00</span><span class="lbl">Hours</span></div>
+          <div class="countdown-unit"><span class="num" id="cd-mins">00</span><span class="lbl">Minutes</span></div>
+          <div class="countdown-unit"><span class="num" id="cd-secs">00</span><span class="lbl">Seconds</span></div>
+        </div>
+      </div>
+
+      <!-- SHARE NUDGE -->
+      <div class="share-nudge">
+        <strong>&#128151; Help spread the word!</strong> Share this giveaway with fellow Waco pet owners — the more the merrier! Sharing is never required, but always appreciated.
+        <div class="share-actions">
+          <button class="share-btn share-btn-fb" onclick="shareFacebook()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Share on Facebook
+          </button>
+          <button class="share-btn share-btn-copy" id="copy-btn" onclick="copyLink()">
+            &#128279; Copy Link
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ENTRY FORM
+  ============================================================ -->
+  <section id="enter">
+    <div class="container">
+
+      <!-- WINNER STATE (shown when timer ends and winner is picked) -->
+      <div id="winner-state">
+        <div style="font-size:3rem; margin-bottom:16px;">🎉🏆🎉</div>
+        <h2>We Have a Winner!</h2>
+        <p style="margin-bottom:16px;">This month's giveaway has ended. Congratulations to our winner:</p>
+        <p class="winner-name" id="winner-display"></p>
+        <p style="margin-top:16px; font-size:0.88rem;">The winner has been notified by email. Stay tuned — a new giveaway starts next month!</p>
+        <div style="margin-top:24px;">
+          <a href="https://www.timetopet.com/portal/thepurrfectpaw/create-account" class="btn btn-gold" rel="noopener noreferrer" target="_blank">Book a Free Meet &amp; Greet</a>
+        </div>
+      </div>
+
+      <!-- ENTRY FORM (hidden when giveaway over) -->
+      <div id="form-section">
+        <div class="form-wrap">
+
+          <!-- SUCCESS STATE -->
+          <div class="success-state" id="success-state">
+            <img src="assets/images/logo.png" alt="The Purr-fect Paw" style="height:80px; width:auto; margin:0 auto 16px; display:block;">
+            <h3>You're Entered!</h3>
+            <p>Thanks for entering this month's giveaway! We'll notify the winner by email when the countdown ends. Good luck!</p>
+            <p style="font-size:0.85rem; color:var(--text-light);">While you wait — follow us on Facebook to see the winner announcement!</p>
+            <a href="https://www.facebook.com/thepurrfectpaw" class="btn btn-primary" rel="noopener noreferrer" target="_blank" style="margin-top:8px;">Follow Us on Facebook</a>
+          </div>
+
+          <!-- THE FORM -->
+          <div id="entry-form-wrap">
+            <div class="form-header">
+              <span class="section-label">&#127881; Enter to Win</span>
+              <h2>Fill Out the Form Below</h2>
+              <p>One entry per household. Must reside in The Purr-fect Paw service area or within 5 miles. Winner verified before notification.</p>
+            </div>
+
+            <form id="entry-form" novalidate>
+
+              <div class="form-divider">Your Information</div>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="g-name">Full Name *</label>
+                  <input type="text" id="g-name" name="name" placeholder="Jane Smith" required autocomplete="name">
+                </div>
+                <div class="form-group">
+                  <label for="g-email">Email Address *</label>
+                  <input type="email" id="g-email" name="email" placeholder="jane@example.com" required autocomplete="email">
+                </div>
+                <div class="form-group full">
+                  <label for="g-zip">Zip Code *</label>
+                  <input type="text" id="g-zip" name="zip" placeholder="76701" maxlength="5" pattern="[0-9]{5}" required autocomplete="postal-code">
+                  <div class="area-notice">
+                    <strong>&#128205; Service area required.</strong> You must reside in The Purr-fect Paw service area or within 5 miles of it to be eligible. Winners are verified before being notified. <a href="index.html#area" style="color:var(--blue); text-decoration:underline;">View our service area map.</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-divider">Tell Us About Your Pets &#128062;</div>
+              <div class="form-grid">
+                <div class="form-group full">
+                  <label>How many pets do you have?</label>
+                  <div class="pet-counters">
+                    <div class="pet-counter">
+                      <span class="pet-emoji">🐶</span>
+                      <span class="pet-name">Dogs</span>
+                      <div class="pet-stepper">
+                        <button type="button" class="pet-stepper-btn" data-pet="dogs" data-action="minus">−</button>
+                        <span class="pet-count-display" id="count-dogs">0</span>
+                        <button type="button" class="pet-stepper-btn" data-pet="dogs" data-action="plus">+</button>
+                      </div>
+                    </div>
+                    <div class="pet-counter">
+                      <span class="pet-emoji">🐱</span>
+                      <span class="pet-name">Cats</span>
+                      <div class="pet-stepper">
+                        <button type="button" class="pet-stepper-btn" data-pet="cats" data-action="minus">−</button>
+                        <span class="pet-count-display" id="count-cats">0</span>
+                        <button type="button" class="pet-stepper-btn" data-pet="cats" data-action="plus">+</button>
+                      </div>
+                    </div>
+                    <div class="pet-counter">
+                      <span class="pet-emoji">🐾</span>
+                      <span class="pet-name">Other Pets</span>
+                      <div class="pet-stepper">
+                        <button type="button" class="pet-stepper-btn" data-pet="other" data-action="minus">−</button>
+                        <span class="pet-count-display" id="count-other">0</span>
+                        <button type="button" class="pet-stepper-btn" data-pet="other" data-action="plus">+</button>
+                      </div>
+                    </div>
+                  </div>
+                  <input type="hidden" id="g-pets-dogs" name="pets_dogs" value="0">
+                  <input type="hidden" id="g-pets-cats" name="pets_cats" value="0">
+                  <input type="hidden" id="g-pets-other" name="pets_other" value="0">
+                </div>
+
+                <div class="form-group full">
+                  <label>Have you ever used a professional pet sitter? *</label>
+                  <div class="radio-group">
+                    <label class="radio-option">
+                      <input type="radio" name="used_sitter" value="Yes" required> Yes
+                    </label>
+                    <label class="radio-option">
+                      <input type="radio" name="used_sitter" value="No"> No, first time considering it
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group full">
+                  <label>Are you a current Purr-fect Paw client? *</label>
+                  <div class="radio-group">
+                    <label class="radio-option">
+                      <input type="radio" name="current_client" value="Yes" required> Yes, I'm already a client!
+                    </label>
+                    <label class="radio-option">
+                      <input type="radio" name="current_client" value="No"> No, not yet
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-submit">
+                <button type="submit" class="btn btn-gold" id="submit-btn">
+                  &#127881; Enter the Giveaway!
+                </button>
+                <p class="form-legal">
+                  By entering, you agree to receive occasional emails from The Purr-fect Paw.<br>
+                  One entry per household. Must reside in service area. Winner chosen randomly at end of month.
+                </p>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       HOW IT WORKS
+  ============================================================ -->
+  <section id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Simple as 1-2-3-4</span>
+        <h2>How the Giveaway Works</h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h4>Fill Out the Form</h4>
+          <p>Enter your name, email, and zip code. Tell us a little about your pets!</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h4>Spread the Word</h4>
+          <p>Share the giveaway on Facebook — it's not required, but every share helps fellow Waco pet owners discover us!</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h4>Winner Chosen Randomly</h4>
+          <p>When the countdown hits zero, a winner is chosen at random automatically. No bias, no picking favorites!</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <h4>We Notify You!</h4>
+          <p>The winner is verified and notified by email. We announce it on Facebook too — watch your inbox!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       RULES
+  ============================================================ -->
+  <section id="rules">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Official Rules</span>
+        <h2>Giveaway Rules &amp; Eligibility</h2>
+      </div>
+      <div class="rules-list">
+        <div class="rule-item"><span class="rule-icon">✓</span><span>Must reside within The Purr-fect Paw service area or within 5 miles of it to be eligible to win.</span></div>
+        <div class="rule-item"><span class="rule-icon">✓</span><span>One entry per household, per month. Duplicate entries will be removed.</span></div>
+        <div class="rule-item"><span class="rule-icon">✓</span><span>Winner is selected randomly by our automated system when the countdown expires.</span></div>
+        <div class="rule-item"><span class="rule-icon">✓</span><span>Winner's zip code will be verified against our service area before notification. If ineligible, a new winner will be drawn.</span></div>
+        <div class="rule-item"><span class="rule-icon">✓</span><span>Winner will be notified by email. Winner has 7 days to respond or a new winner will be selected.</span></div>
+        <div class="rule-item"><span class="rule-icon">✓</span><span>The Purr-fect Paw gift card is valid for any service. Restaurant gift card is for the featured local restaurant of that month.</span></div>
+        <div class="rule-item"><span class="rule-icon">✓</span><span>No purchase necessary. Sharing on social media is encouraged but never required for entry.</span></div>
+        <div class="rule-item"><span class="rule-icon">✓</span><span>Giveaway runs monthly. A new giveaway begins at the start of each calendar month.</span></div>
+        <div class="rule-item"><span class="rule-icon">✓</span><span>Employees and immediate family members of The Purr-fect Paw are not eligible.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="container">
+      <img src="assets/images/logo1.png" alt="The Purr-fect Paw" width="200" height="44" loading="lazy">
+      <p>Professional pet sitting and dog walking in Waco, Temple, and Central Texas since 2011.</p>
+      <p><a href="tel:+12544956578">254-495-6578</a> &nbsp;|&nbsp; <a href="mailto:Info@thepurrfectpaw.com">Info@thepurrfectpaw.com</a></p>
+      <div class="footer-bottom">
+        <span>&copy; <span id="year"></span> The Purr-fect Paw. All rights reserved. &nbsp;|&nbsp; <a href="index.html">Main Site</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <script>
+  /* ============================================================
+     GIVEAWAY CONFIG — Update these each month
+  ============================================================ */
+  const GIVEAWAY_CONFIG = {
+    // Set the end date/time for this month's giveaway (local time)
+    // Format: 'YYYY-MM-DDTHH:MM:SS'
+    endDate: '2026-04-30T23:59:59',
+
+    // Restaurant for this month (displayed on winner email + winner state)
+    restaurant: 'a local Waco restaurant (TBD)',
+
+    // Google Apps Script endpoint — stores all entries in Google Sheets
+    scriptUrl: 'https://script.google.com/macros/s/AKfycbzHPANrIozzhTPg2cRFstX8pCYlKsoRD1lIrq_lrlY8PPXUH-qXOFtitkWMlOa3y0NV6w/exec',
+
+    // EmailJS config — same account as main site
+    emailjsServiceId: 'service_enphpal',
+    emailjsPublicKey: 'Kg2d5VZ_mDuqk7Lfa',
+
+    // EmailJS template IDs — create these 2 in your EmailJS dashboard
+    templateOwner:        'template_giveaway_owner', // sent to YOU with winner details
+    templateNonWinnerNew: 'template_giveaway_new',   // sent to non-winners who are new clients
+
+    // Your email
+    ownerEmail: 'Info@thepurrfectpaw.com',
+
+    // Discount for non-winning new clients
+    discountCode:   'WELCOME20',
+    discountAmount: '$20'
+  };
+
+  /* ============================================================
+     STORAGE KEY — change each month to reset entries
+  ============================================================ */
+  const MONTH_KEY = '2026-04'; // Change each month — must match YYYY-MM
+  const ENTERED_KEY = 'ppaw_entered_2026_04'; // Change month each time
+
+  /* ============================================================
+     INIT
+  ============================================================ */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  if (typeof emailjs !== 'undefined') {
+    emailjs.init(GIVEAWAY_CONFIG.emailjsPublicKey);
+  }
+
+  // Pet counters state
+  const petCounts = { dogs: 0, cats: 0, other: 0 };
+
+  // Check if already entered this month (local flag so they don't see the form again)
+  if (localStorage.getItem(ENTERED_KEY)) {
+    showSuccess();
+  }
+
+  /* ============================================================
+     COUNTDOWN TIMER
+  ============================================================ */
+  function updateCountdown() {
+    const end = new Date(GIVEAWAY_CONFIG.endDate).getTime();
+    const now = new Date().getTime();
+    const diff = end - now;
+
+    if (diff <= 0) {
+      // Giveaway ended — pick winner
+      document.getElementById('cd-days').textContent  = '00';
+      document.getElementById('cd-hours').textContent = '00';
+      document.getElementById('cd-mins').textContent  = '00';
+      document.getElementById('cd-secs').textContent  = '00';
+      pickWinner();
+      return;
+    }
+
+    const days  = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const mins  = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const secs  = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById('cd-days').textContent  = String(days).padStart(2, '0');
+    document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+    document.getElementById('cd-mins').textContent  = String(mins).padStart(2, '0');
+    document.getElementById('cd-secs').textContent  = String(secs).padStart(2, '0');
+
+    setTimeout(updateCountdown, 1000);
+  }
+
+  updateCountdown();
+
+  /* ============================================================
+     PET COUNTERS
+  ============================================================ */
+  document.querySelectorAll('.pet-stepper-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var pet = btn.getAttribute('data-pet');
+      var action = btn.getAttribute('data-action');
+      if (action === 'plus') {
+        petCounts[pet]++;
+      } else if (action === 'minus' && petCounts[pet] > 0) {
+        petCounts[pet]--;
+      }
+      document.getElementById('count-' + pet).textContent = petCounts[pet];
+      document.getElementById('g-pets-' + pet).value = petCounts[pet];
+    });
+  });
+
+  /* ============================================================
+     FORM SUBMISSION
+  ============================================================ */
+  document.getElementById('entry-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name   = document.getElementById('g-name').value.trim();
+    const email  = document.getElementById('g-email').value.trim();
+    const zip    = document.getElementById('g-zip').value.trim();
+    const sitter = document.querySelector('input[name="used_sitter"]:checked');
+    const client = document.querySelector('input[name="current_client"]:checked');
+
+    // Basic validation
+    let valid = true;
+    if (!name)  { document.getElementById('g-name').classList.add('error'); valid = false; }
+    if (!email) { document.getElementById('g-email').classList.add('error'); valid = false; }
+    if (!zip || zip.length !== 5 || isNaN(zip)) { document.getElementById('g-zip').classList.add('error'); valid = false; }
+    if (!sitter || !client) { valid = false; alert('Please answer all required questions.'); }
+
+    if (!valid) return;
+
+    const btn = document.getElementById('submit-btn');
+    btn.textContent = 'Submitting…';
+    btn.disabled = true;
+
+    // Build entry object
+    const entry = {
+      name:           name,
+      email:          email,
+      zip:            zip,
+      pets_dogs:      petCounts.dogs,
+      pets_cats:      petCounts.cats,
+      pets_other:     petCounts.other,
+      used_sitter:    sitter.value,
+      current_client: client.value,
+      entered_at:     new Date().toISOString(),
+      month:          MONTH_KEY
+    };
+
+    // POST to Google Sheets via Apps Script
+    fetch(GIVEAWAY_CONFIG.scriptUrl, {
+      method: 'POST',
+      body: JSON.stringify(entry)
+    })
+    .then(function(res) { return res.json(); })
+    .then(function(data) {
+      if (data.status === 'duplicate') {
+        alert('It looks like you\'ve already entered this month\'s giveaway! Good luck 🐾');
+        btn.innerHTML = '&#127881; Enter the Giveaway!';
+        btn.disabled = false;
+        return;
+      }
+      // Mark entered in localStorage so the form hides on return visit
+      localStorage.setItem(ENTERED_KEY, '1');
+      showSuccess();
+    })
+    .catch(function(err) {
+      console.error('Submission error:', err);
+      btn.textContent = 'Error — please try again';
+      btn.disabled = false;
+    });
+  });
+
+  // Clear error on input
+  ['g-name','g-email','g-zip'].forEach(function(id) {
+    document.getElementById(id).addEventListener('input', function() {
+      this.classList.remove('error');
+    });
+  });
+
+  /* ============================================================
+     SHOW SUCCESS
+  ============================================================ */
+  function showSuccess() {
+    document.getElementById('entry-form-wrap').style.display = 'none';
+    document.getElementById('success-state').style.display = 'block';
+  }
+
+  /* ============================================================
+     PICK WINNER — runs automatically when timer hits 0
+     Fetches all entries from Google Sheets, picks randomly
+  ============================================================ */
+  function pickWinner() {
+    // Hide form, show winner state
+    document.getElementById('form-section').style.display = 'none';
+    document.getElementById('winner-state').style.display = 'block';
+    document.getElementById('winner-display').textContent = 'Selecting winner…';
+
+    // Check if winner already recorded locally (prevents re-pick on page refresh)
+    const winnerKey = 'ppaw_winner_' + MONTH_KEY;
+    const existingWinner = localStorage.getItem(winnerKey);
+    if (existingWinner) {
+      const w = JSON.parse(existingWinner);
+      document.getElementById('winner-display').textContent = w.name;
+      return;
+    }
+
+    // Fetch all entries for this month from Google Sheets
+    fetch(GIVEAWAY_CONFIG.scriptUrl + '?month=' + MONTH_KEY)
+      .then(function(res) { return res.json(); })
+      .then(function(data) {
+        if (data.status !== 'ok' || !data.entries || data.entries.length === 0) {
+          document.getElementById('winner-display').textContent = 'No entries received this month.';
+          return;
+        }
+
+        const entries = data.entries;
+
+        // Random selection
+        const winnerIndex = Math.floor(Math.random() * entries.length);
+        const winner = entries[winnerIndex];
+
+        // Save locally so refresh doesn't re-pick
+        localStorage.setItem(winnerKey, JSON.stringify(winner));
+
+        // Display winner
+        document.getElementById('winner-display').textContent = winner.name;
+
+        // Notify owner with full winner details
+        sendOwnerNotification(winner, entries);
+
+        // Send $20 off email to non-winning NEW clients only
+        entries.forEach(function(entry, idx) {
+          if (idx !== winnerIndex && entry.current_client === 'No') {
+            setTimeout(function() {
+              sendNonWinnerEmail(entry);
+            }, idx * 600); // stagger to avoid rate limits
+          }
+        });
+      })
+      .catch(function(err) {
+        console.error('Winner fetch error:', err);
+        document.getElementById('winner-display').textContent = 'Error selecting winner — please contact us.';
+      });
+  }
+
+  /* ============================================================
+     EMAIL SENDS
+  ============================================================ */
+  function sendOwnerNotification(winner, allEntries) {
+    var params = {
+      to_email:       GIVEAWAY_CONFIG.ownerEmail,
+      winner_name:    winner.name,
+      winner_email:   winner.email,
+      winner_zip:     winner.zip,
+      winner_dogs:    winner.pets_dogs,
+      winner_cats:    winner.pets_cats,
+      winner_other:   winner.pets_other,
+      winner_sitter:  winner.used_sitter,
+      winner_client:  winner.current_client,
+      total_entries:  allEntries.length,
+      restaurant:     GIVEAWAY_CONFIG.restaurant,
+      month:          new Date().toLocaleString('default', { month: 'long', year: 'numeric' })
+    };
+
+    if (typeof emailjs !== 'undefined') {
+      emailjs.send(GIVEAWAY_CONFIG.emailjsServiceId, GIVEAWAY_CONFIG.templateOwner, params)
+        .then(function() { console.log('Owner notified of winner.'); })
+        .catch(function(err) { console.error('Owner email error:', err); });
+    }
+  }
+
+  function sendNonWinnerEmail(entry) {
+    var params = {
+      to_name:         entry.name,
+      to_email:        entry.email,
+      discount_code:   GIVEAWAY_CONFIG.discountCode,
+      discount_amount: GIVEAWAY_CONFIG.discountAmount,
+      restaurant:      GIVEAWAY_CONFIG.restaurant,
+      month:           new Date().toLocaleString('default', { month: 'long', year: 'numeric' })
+    };
+
+    if (typeof emailjs !== 'undefined') {
+      emailjs.send(GIVEAWAY_CONFIG.emailjsServiceId, GIVEAWAY_CONFIG.templateNonWinnerNew, params)
+        .catch(function(err) { console.error('Non-winner email error:', err); });
+    }
+  }
+
+  /* ============================================================
+     SHARE FUNCTIONS
+  ============================================================ */
+  function shareFacebook() {
+    var url = encodeURIComponent(window.location.href);
+    window.open('https://www.facebook.com/sharer/sharer.php?u=' + url, '_blank', 'width=600,height=400');
+  }
+
+  function copyLink() {
+    navigator.clipboard.writeText(window.location.href).then(function() {
+      var btn = document.getElementById('copy-btn');
+      btn.textContent = '✓ Copied!';
+      setTimeout(function() { btn.innerHTML = '&#128279; Copy Link'; }, 2000);
+    });
+  }
+
+  /* ============================================================
+     SMOOTH SCROLL
+  ============================================================ */
+  document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      var id = link.getAttribute('href').slice(1);
+      var target = document.getElementById(id);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+  </script>
+
+  <!--
+  ================================================================
+  EMAILJS TEMPLATE SETUP INSTRUCTIONS
+  ================================================================
+  You need to create 2 templates in your EmailJS dashboard
+  (emailjs.com → Email Templates). Here's what each should contain:
+
+  ─────────────────────────────────────────────
+  TEMPLATE 1: template_giveaway_owner
+  (Sent to YOU when a winner is picked — you verify zip, then manually email winner)
+  Subject: 🏆 Giveaway Winner Picked — {{month}}
+  Body:
+    The {{month}} giveaway winner has been randomly selected!
+
+    WINNER DETAILS:
+    Name: {{winner_name}}
+    Email: {{winner_email}}
+    Zip Code: {{winner_zip}} ← PLEASE VERIFY this is in service area
+    Dogs: {{winner_dogs}} | Cats: {{winner_cats}} | Other: {{winner_other}}
+    Used pet sitter before? {{winner_sitter}}
+    Current client? {{winner_client}}
+
+    Total entries this month: {{total_entries}}
+    Restaurant this month: {{restaurant}}
+
+    Once you verify their zip code, email them their prize!
+
+  ─────────────────────────────────────────────
+  TEMPLATE 2: template_giveaway_new
+  (Sent to non-winning NEW clients only — existing clients get nothing)
+  Subject: You didn't win this time, but here's something special 🐾
+  Body:
+    Hi {{to_name}},
+
+    Thank you so much for entering The Purr-fect Paw monthly giveaway!
+    Unfortunately you weren't selected as this month's winner, but we
+    appreciate you being part of our community.
+
+    As a thank you, we'd love to offer you {{discount_amount}} off your
+    first service with us! Use code {{discount_code}} when booking.
+
+    We're Waco's highest-rated pet sitting and dog walking company —
+    insured, bonded, and certified. Schedule a FREE meet & greet today:
+    https://www.timetopet.com/portal/thepurrfectpaw/create-account
+
+    See you next month for another chance to win!
+    — The Purr-fect Paw Team
+
+  ================================================================
+  MONTHLY RESET CHECKLIST
+  ================================================================
+  Each month, update these 2 things in the <script> block:
+
+  1. GIVEAWAY_CONFIG.endDate  → last day of the month at 11:59 PM
+  2. GIVEAWAY_CONFIG.restaurant → the featured restaurant name
+  3. STORAGE_KEY → change the month (e.g. '2026_04' → '2026_05')
+  4. ENTERED_KEY → same, change the month
+
+  That's it! The page resets automatically with new storage keys.
+  ================================================================
+  -->
+
+</body>
+</html>

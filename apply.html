@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join Our Team | The Purr-fect Paw | Waco, TX</title>
+  <meta name="description" content="Join The Purr-fect Paw team as a pet sitter and dog walker in Waco, TX. Flexible schedule, great pay, and all the pet cuddles you can handle.">
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue:        #3a6fc4;
+      --blue-dark:   #2a57a0;
+      --blue-deeper: #1e3f7a;
+      --blue-bg:     #3d6dc0;
+      --blue-light:  #e8eef8;
+      --white:       #ffffff;
+      --off-white:   #f8f9fc;
+      --gray-light:  #f0f2f7;
+      --gray-mid:    #d8dce8;
+      --text:        #2a2d3e;
+      --text-light:  #5a607a;
+      --radius:      8px;
+      --shadow:      0 2px 16px rgba(58,111,196,0.12);
+      --shadow-lg:   0 6px 32px rgba(58,111,196,0.18);
+      --font:        'Nunito', 'Helvetica Neue', Arial, sans-serif;
+      --transition:  0.22s ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); color: var(--text); background: var(--white); line-height: 1.7; overflow-x: hidden; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    h1,h2,h3,h4 { font-weight: 800; line-height: 1.2; }
+    p { margin-bottom: 1rem; color: var(--text-light); }
+    p:last-child { margin-bottom: 0; }
+    ul { list-style: none; }
+
+    /* TOPBAR */
+    #topbar { background: var(--blue-dark); color: var(--white); padding: 8px 0; font-size: 0.83rem; font-weight: 600; }
+    .topbar-inner { max-width: 1160px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    #topbar a { color: var(--white); }
+    #topbar a:hover { text-decoration: underline; }
+
+    /* NAVBAR */
+    #navbar { background: var(--white); border-bottom: 2px solid var(--blue-light); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(58,111,196,0.1); }
+    .nav-inner { max-width: 1160px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 76px; gap: 16px; }
+    .nav-logo img { height: 56px; width: auto; }
+    .nav-cta { display: flex; gap: 8px; }
+    .btn { display: inline-block; padding: 13px 28px; border-radius: var(--radius); font-family: var(--font); font-size: 0.82rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; cursor: pointer; transition: all var(--transition); border: 2px solid transparent; white-space: nowrap; }
+    .btn-primary { background: var(--blue); color: var(--white); border-color: var(--blue); }
+    .btn-primary:hover { background: var(--blue-dark); border-color: var(--blue-dark); transform: translateY(-1px); }
+    .btn-outline { background: transparent; color: var(--blue); border-color: var(--blue); }
+    .btn-outline:hover { background: var(--blue); color: var(--white); transform: translateY(-1px); }
+    .btn-outline-white { background: transparent; color: var(--white); border-color: var(--white); }
+    .btn-outline-white:hover { background: var(--white); color: var(--blue-dark); transform: translateY(-1px); }
+    .btn-sm { padding: 9px 20px; font-size: 0.76rem; }
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+    /* HERO */
+    #apply-hero {
+      background: var(--blue-bg);
+      padding: 72px 0 60px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    #apply-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/images/logo.png');
+      background-size: 180px auto;
+      background-repeat: repeat;
+      opacity: 0.07;
+      pointer-events: none;
+    }
+    #apply-hero .container { position: relative; z-index: 1; }
+    #apply-hero .section-label { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.15); display: inline-block; padding: 3px 14px; border-radius: 3px; margin-bottom: 16px; }
+    #apply-hero h1 { color: var(--white); font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; }
+    #apply-hero .hero-sub { font-size: 1.1rem; color: rgba(255,255,255,0.88); max-width: 700px; margin: 0 auto 28px; }
+    #apply-hero .hero-buttons { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+    /* SECTION STYLES */
+    .section { padding: 72px 0; }
+    .section-alt { background: var(--off-white); }
+    .section-blue { background: var(--blue-bg); position: relative; overflow: hidden; }
+    .section-blue::before { content: ''; position: absolute; inset: 0; background-image: url('assets/images/logo.png'); background-size: 180px auto; background-repeat: repeat; opacity: 0.04; pointer-events: none; }
+    .section-blue .container { position: relative; z-index: 1; }
+    .section-header { text-align: center; max-width: 760px; margin: 0 auto 48px; }
+    .section-label { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); display: block; margin-bottom: 6px; }
+    .section-header h2 { font-size: clamp(1.4rem, 2.5vw, 2rem); text-transform: uppercase; letter-spacing: 0.04em; color: var(--blue); margin-bottom: 14px; }
+    .section-blue .section-header h2 { color: var(--white); }
+    .section-blue .section-label { color: rgba(255,255,255,0.9); background: rgba(255,255,255,0.15); display: inline-block; padding: 3px 12px; border-radius: 3px; }
+    .section-blue p { color: rgba(255,255,255,0.85); }
+
+    /* INTRO CONTENT */
+    .intro-content { max-width: 860px; margin: 0 auto; }
+    .intro-content p { font-size: 0.97rem; line-height: 1.8; color: var(--text-light); margin-bottom: 1.2rem; }
+    .intro-content h3 { font-size: 1.1rem; color: var(--blue); margin: 28px 0 10px; text-transform: uppercase; letter-spacing: 0.04em; }
+
+    /* WHAT WE DO GRID */
+    .duties-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 32px 0; }
+    .duty-item { display: flex; gap: 12px; align-items: flex-start; background: var(--white); border: 1px solid var(--gray-mid); border-radius: var(--radius); padding: 16px; }
+    .duty-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+    .duty-item p { font-size: 0.88rem; margin: 0; color: var(--text-light); }
+
+    /* REQUIREMENTS */
+    .req-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 28px; margin: 24px 0; }
+    .req-item { display: flex; gap: 10px; align-items: flex-start; font-size: 0.9rem; color: var(--text-light); }
+    .req-check { color: var(--blue); font-weight: 900; flex-shrink: 0; margin-top: 3px; }
+
+    /* PAY CARDS */
+    .pay-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 32px 0; }
+    .pay-card { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); border-radius: var(--radius); padding: 28px 20px; text-align: center; }
+    .pay-card .duration { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.65); margin-bottom: 8px; display: block; }
+    .pay-card .amount { font-size: 2.4rem; font-weight: 900; color: var(--white); line-height: 1; display: block; }
+    .pay-card .per { font-size: 0.75rem; color: rgba(255,255,255,0.55); margin-top: 4px; display: block; }
+
+    /* RAISES TIMELINE */
+    .raises-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin: 28px 0; }
+    .raise-card { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: var(--radius); padding: 20px 22px; }
+    .raise-card .raise-period { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 6px; display: block; }
+    .raise-card .raise-amount { font-size: 1.1rem; font-weight: 800; color: var(--white); }
+
+    /* EXAMPLE BOX */
+    .example-box { background: rgba(255,255,255,0.1); border: 1.5px solid rgba(255,255,255,0.25); border-radius: var(--radius); padding: 28px 32px; margin: 28px 0; font-size: 0.9rem; color: rgba(255,255,255,0.88); line-height: 1.8; }
+    .example-box strong { color: var(--white); }
+    .example-total { font-size: 1.1rem; font-weight: 800; color: var(--white); margin-top: 12px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 12px; }
+
+    /* PERKS */
+    .perks-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 28px 0; }
+    .perk-item { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: var(--radius); padding: 18px 16px; text-align: center; font-size: 0.88rem; color: rgba(255,255,255,0.85); }
+    .perk-item .perk-icon { font-size: 1.6rem; display: block; margin-bottom: 8px; }
+    .perk-item strong { display: block; color: var(--white); font-size: 0.9rem; margin-bottom: 4px; }
+
+    /* APPLICATION FORM */
+    #application { background: var(--off-white); }
+    .apply-form-wrap { background: var(--white); border: 1px solid var(--gray-mid); border-radius: 12px; box-shadow: var(--shadow-lg); padding: 40px 36px; max-width: 900px; margin: 0 auto; }
+    .apply-form-wrap h3 { font-size: 1.3rem; color: var(--blue); margin-bottom: 28px; text-transform: uppercase; letter-spacing: 0.04em; }
+    .form-section-title { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); border-bottom: 2px solid var(--blue-light); padding-bottom: 8px; margin: 28px 0 18px; grid-column: span 2; }
+    .apply-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 20px; }
+    .apply-grid .full { grid-column: span 2; }
+    .form-group { display: flex; flex-direction: column; gap: 5px; }
+    .form-group label { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 10px 13px; background: var(--off-white);
+      border: 1.5px solid var(--gray-mid); border-radius: 6px;
+      color: var(--text); font-family: var(--font); font-size: 0.92rem;
+      transition: border-color var(--transition), background var(--transition);
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none; border-color: var(--blue); background: var(--white);
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .checkbox-group { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 20px; margin-top: 4px; }
+    .checkbox-group.three-col { grid-template-columns: repeat(3, 1fr); }
+    .checkbox-item { display: flex; align-items: center; gap: 8px; font-size: 0.88rem; color: var(--text-light); cursor: pointer; }
+    .checkbox-item input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--blue); cursor: pointer; flex-shrink: 0; }
+    .checkbox-label-title { font-size: 0.88rem; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+    .apply-submit { display: flex; justify-content: flex-end; margin-top: 28px; }
+    .apply-submit .btn { padding: 14px 40px; font-size: 0.85rem; }
+    .form-note { font-size: 0.78rem; color: var(--text-light); margin-top: 10px; text-align: center; }
+
+    /* FOOTER */
+    #footer { background: var(--blue-deeper); color: rgba(255,255,255,0.7); padding: 52px 0 28px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+    .footer-brand img { height: 60px; margin-bottom: 14px; }
+    .footer-brand p { font-size: 0.87rem; max-width: 300px; color: rgba(255,255,255,0.75); }
+    .footer-col h5 { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); margin-bottom: 14px; }
+    .footer-col ul { display: flex; flex-direction: column; gap: 9px; }
+    .footer-col ul a { font-size: 0.87rem; color: rgba(255,255,255,0.65); transition: color var(--transition); }
+    .footer-col ul a:hover { color: var(--white); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 22px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 0.8rem; }
+
+    @media (max-width: 900px) {
+      .pay-grid { grid-template-columns: repeat(3, 1fr); }
+      .duties-grid, .req-list, .raises-grid { grid-template-columns: 1fr; }
+      .apply-grid { grid-template-columns: 1fr; }
+      .apply-grid .full, .form-section-title { grid-column: span 1; }
+      .perks-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .pay-grid { grid-template-columns: 1fr; }
+      .perks-grid { grid-template-columns: 1fr; }
+      .apply-form-wrap { padding: 24px 18px; }
+      .checkbox-group { grid-template-columns: 1fr; }
+      .checkbox-group.three-col { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      #apply-hero .hero-buttons { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div id="topbar">
+    <div class="topbar-inner">
+      <span>&#128222; <a href="tel:+12544956578">254-495-6578</a></span>
+      <span>&#9993; <a href="mailto:Info@thepurrfectpaw.com">Info@thepurrfectpaw.com</a></span>
+      <span><a href="https://www.timetopet.com/portal/thepurrfectpaw/create-account" rel="noopener noreferrer" target="_blank">&#10003; Schedule a Free Meet &amp; Greet</a></span>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="The Purr-fect Paw — Home">
+        <img src="assets/images/logo1.png" alt="The Purr-fect Paw Logo" width="160" height="54">
+      </a>
+      <div class="nav-cta">
+        <a href="index.html" class="btn btn-outline btn-sm">&#8592; Back to Main Site</a>
+        <a href="#application" class="btn btn-primary btn-sm">Apply Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="apply-hero">
+    <div class="container">
+      <span class="section-label">We're Hiring in Waco, TX</span>
+      <h1>Join Our Waco Team! &#128062;</h1>
+      <p class="hero-sub">Become a part of The Purr-fect Paw team and do what you love every day! You'll spend your time walking, playing, and caring for pets on their own schedule — it hardly seems like work!</p>
+      <div class="hero-buttons">
+        <a href="#application" class="btn btn-outline-white">Apply Now</a>
+        <a href="#compensation" class="btn btn-outline-white">See Pay &amp; Perks</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT THE ROLE -->
+  <section class="section" id="about-role">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">The Opportunity</span>
+        <h2>Is This the Job for You?</h2>
+      </div>
+      <div class="intro-content">
+        <p>Do you love animals big and small? Tired of working in a fur-free environment? Are you a pet-loving individual who is reliable, responsible, and possesses common sense? We're looking for someone just like you to join our team as a pet sitter and dog walker.</p>
+        <p>As a member of our team, you will be responsible for providing exceptional care and ensuring the safety and well-being of our clients' beloved pets in the comfort of their own homes. If you have a genuine love for pets and are committed to providing outstanding care, we encourage you to keep reading and apply!</p>
+
+        <h3>Why Choose The Purr-fect Paw?</h3>
+        <p>We are a highly regarded pet-sitting and dog-walking company committed to delivering gentle, loving care to pets. Our exceptional team is made up of individuals who share our values of reliability, attention to detail, clear communication, and love for animals. We understand that our staff is our greatest asset.</p>
+        <p>At The Purr-fect Paw you'll enjoy the freedom of a <strong>flexible schedule</strong> that fits your lifestyle — whether you're a teacher looking to earn extra income during the holidays and summer, a college student who wants to work nights and weekends, or just someone looking to make extra income. We welcome all schedules and commitments!</p>
+        <p style="background: var(--blue-light); border-left: 4px solid var(--blue); padding: 14px 18px; border-radius: 0 6px 6px 0; color: var(--text); font-size: 0.9rem;"><strong>Important:</strong> Our schedules can be unpredictable and vary depending on the month. This job is meant to provide supplementary income and we cannot guarantee a specific amount of income each week. Please visit our <a href="index.html#area" style="color: var(--blue); text-decoration: underline;">Service Area map</a> — you <strong>must reside in our service area</strong> to be considered. If you live outside our service area, please do not apply.</p>
+
+        <h3>What Our Pet Sitters Do</h3>
+        <p>We offer multiple time frames throughout the day, with our earliest window between 6:00 AM–9:00 AM and our latest window from 8:00 PM–11:00 PM. You'll spend the majority of time at each visit feeding, refilling water, walking, playing, and giving all pets tender loving care.</p>
+      </div>
+
+      <div class="duties-grid">
+        <div class="duty-item"><span class="duty-icon">🐾</span><p>Walking dogs of all sizes and administering medication to dogs and cats as needed</p></div>
+        <div class="duty-item"><span class="duty-icon">🏠</span><p>Checking the overall status of a client's home to ensure it's safe and secure</p></div>
+        <div class="duty-item"><span class="duty-icon">🧹</span><p>Maintaining cleanliness by scooping litter and cleaning up occasional potty accidents</p></div>
+        <div class="duty-item"><span class="duty-icon">🌱</span><p>Possibly watering plants and maintaining open communication with office staff and clients</p></div>
+        <div class="duty-item"><span class="duty-icon">📱</span><p>Sending detailed visit reports with photos through our app after every visit</p></div>
+        <div class="duty-item"><span class="duty-icon">❤️</span><p>Catering to each pet's unique needs — whether fetch, walks, or simply being present</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REQUIREMENTS -->
+  <section class="section section-alt" id="requirements">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">What We're Looking For</span>
+        <h2>Requirements</h2>
+        <p>We're looking for individuals who are as passionate about pets as we are. Here's what it takes to join the team.</p>
+      </div>
+      <div class="req-list">
+        <div class="req-item"><span class="req-check">✓</span><span>Experience with and genuine love for animals</span></div>
+        <div class="req-item"><span class="req-check">✓</span><span>High integrity and character — someone who doesn't cut corners</span></div>
+        <div class="req-item"><span class="req-check">✓</span><span>Available to work some or all significant holidays and surrounding days</span></div>
+        <div class="req-item"><span class="req-check">✓</span><span>Comfortable entering clients' homes and visiting pets of all varieties</span></div>
+        <div class="req-item"><span class="req-check">✓</span><span>Willingness to scoop litter and pick up after pets</span></div>
+        <div class="req-item"><span class="req-check">✓</span><span>Strong communication skills to keep clients and team members in the loop</span></div>
+        <div class="req-item"><span class="req-check">✓</span><span>Reliable, dependable, detail-oriented with a strong work ethic</span></div>
+        <div class="req-item"><span class="req-check">✓</span><span>Enjoys working independently but can follow directions and work as a team</span></div>
+        <div class="req-item"><span class="req-check">✓</span><span>Capable of handling all types of dogs, cats, and other household pets</span></div>
+        <div class="req-item"><span class="req-check">✓</span><span>Able to walk or drive to multiple visits per day in various weather conditions</span></div>
+        <div class="req-item"><span class="req-check">✓</span><span>Access to a reliable car, valid driver's license, and current insurance</span></div>
+        <div class="req-item"><span class="req-check">✓</span><span>Smartphone with good skills and daily internet access</span></div>
+        <div class="req-item"><span class="req-check">✓</span><span>18+ years old and willing to submit to a criminal background check</span></div>
+        <div class="req-item"><span class="req-check">✓</span><span>Must reside within The Purr-fect Paw service area</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPENSATION -->
+  <section class="section section-blue" id="compensation">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Compensation &amp; Perks</span>
+        <h2>What You'll Earn</h2>
+        <p>You are paid per visit plus mileage reimbursement. All gas reimbursement is TAX-FREE!</p>
+      </div>
+
+      <div class="pay-grid">
+        <div class="pay-card">
+          <span class="duration">15 Minute Visit</span>
+          <span class="amount">$6</span>
+          <span class="per">per visit</span>
+        </div>
+        <div class="pay-card">
+          <span class="duration">30 Minute Visit</span>
+          <span class="amount">$8</span>
+          <span class="per">per visit</span>
+        </div>
+        <div class="pay-card">
+          <span class="duration">45 Minute Visit</span>
+          <span class="amount">$10</span>
+          <span class="per">per visit</span>
+        </div>
+      </div>
+
+      <p style="text-align:center; color:rgba(255,255,255,0.75); font-size:0.9rem; margin-bottom: 8px;">Plus <strong style="color:var(--white);">$0.25 per mile</strong> reimbursement (TAX-FREE)</p>
+
+      <h3 style="color:var(--white); font-size:1rem; text-transform:uppercase; letter-spacing:0.05em; text-align:center; margin: 32px 0 16px;">Example: A 2-Hour Workday</h3>
+      <div class="example-box">
+        <p style="color:rgba(255,255,255,0.88); margin-bottom:8px;">Drive 5 miles → <strong>SIT A</strong> (30 min) → Drive 5 miles → <strong>SIT B</strong> (30 min) → Drive 5 miles → <strong>SIT C</strong> (30 min) → Drive 5 miles → HOME</p>
+        <div class="example-total">
+          3 visits × $8 = $24 &nbsp;+&nbsp; 20 miles × $0.25 = $5 in gas<br>
+          <span style="font-size:1.3rem;">Total: $29 for ~90 minutes of work</span><br>
+          <span style="font-size:0.8rem; opacity:0.7;">Before tips — and a lot of our clients are generous tippers!</span>
+        </div>
+      </div>
+
+      <div class="perks-grid">
+        <div class="perk-item"><span class="perk-icon">🎄</span><strong>Holiday Bonus</strong>$5 extra per visit on all holidays</div>
+        <div class="perk-item"><span class="perk-icon">⚡</span><strong>Next-Day Request</strong>$5 extra per visit when you accept</div>
+        <div class="perk-item"><span class="perk-icon">🚀</span><strong>Same-Day Request</strong>$10 extra per visit when you accept</div>
+        <div class="perk-item"><span class="perk-icon">🐶</span><strong>50% Staff Discount</strong>Use our services at half price</div>
+        <div class="perk-item"><span class="perk-icon">💰</span><strong>Tax-Free Mileage</strong>All gas reimbursement is tax-free</div>
+        <div class="perk-item"><span class="perk-icon">😻</span><strong>Unlimited Cuddles</strong>Slobbery kisses, head butts &amp; purrs</div>
+      </div>
+
+      <h3 style="color:var(--white); font-size:1rem; text-transform:uppercase; letter-spacing:0.05em; text-align:center; margin: 40px 0 20px;">Pay Raises</h3>
+      <p style="text-align:center; color:rgba(255,255,255,0.75); max-width:600px; margin: 0 auto 24px; font-size:0.9rem;">You'll receive 4 separate raises within your first year. After that, the only other raise would be a promotion to Team Leader.</p>
+      <div class="raises-grid">
+        <div class="raise-card"><span class="raise-period">First Raise — 1 to 4 Months</span><span class="raise-amount">+$0.50 per visit</span></div>
+        <div class="raise-card"><span class="raise-period">Second Raise — 5 to 8 Months</span><span class="raise-amount">+$0.50 per visit</span></div>
+        <div class="raise-card"><span class="raise-period">Third Raise — 9 to 12 Months</span><span class="raise-amount">+$1.00 per visit</span></div>
+        <div class="raise-card"><span class="raise-period">Yearly Raise (Max 4 Years)</span><span class="raise-amount">+$0.10/mile gas reimbursement per year</span></div>
+      </div>
+      <p style="text-align:center; color:rgba(255,255,255,0.65); font-size:0.85rem; margin-top:20px;">The fastest way to earn raises: show genuine love for animals, be flexible and available, respond promptly, and be reliable and accountable.</p>
+    </div>
+  </section>
+
+  <!-- APPLICATION FORM -->
+  <section class="section" id="application">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Ready to Join?</span>
+        <h2>Submit Your Application</h2>
+        <p>Fill out the form below and we'll be in touch. We look forward to meeting you!</p>
+      </div>
+
+      <div class="apply-form-wrap">
+        <h3>&#128062; Pet Sitter / Dog Walker Application</h3>
+        <form id="apply-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+
+          <div class="apply-grid">
+            <div class="form-section-title">Personal Information</div>
+
+            <div class="form-group">
+              <label for="a-name">Full Name *</label>
+              <input type="text" id="a-name" name="name" placeholder="Jane Smith" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="a-email">Email Address *</label>
+              <input type="email" id="a-email" name="email" placeholder="jane@example.com" required autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="a-phone">Phone Number *</label>
+              <input type="tel" id="a-phone" name="phone" placeholder="(254) 000-0000" required autocomplete="tel">
+            </div>
+            <div class="form-group">
+              <label for="a-address">Home Address *</label>
+              <input type="text" id="a-address" name="address" placeholder="123 Main St, Waco, TX" required autocomplete="street-address">
+            </div>
+
+            <div class="form-section-title">Availability &amp; Preferences</div>
+
+            <div class="form-group">
+              <label for="a-income">Minimum Monthly Income Needed</label>
+              <select id="a-income" name="min_income">
+                <option value="">Select an amount…</option>
+                <option>Less than $200</option>
+                <option>$200 – $400</option>
+                <option>$400 – $600</option>
+                <option>$600 – $800</option>
+                <option>$800+</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="a-income-type">Type of Income Looking For</label>
+              <select id="a-income-type" name="income_type">
+                <option value="">Select…</option>
+                <option>Supplementary / Side income</option>
+                <option>Primary income</option>
+                <option>Seasonal income</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="a-cat-allergy">Are you allergic to cats?</label>
+              <select id="a-cat-allergy" name="cat_allergy">
+                <option value="">Select…</option>
+                <option>No</option>
+                <option>Yes — mild</option>
+                <option>Yes — severe</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="a-transport">Do you have reliable transportation?</label>
+              <select id="a-transport" name="transportation">
+                <option value="">Select…</option>
+                <option>Yes — car with valid license &amp; insurance</option>
+                <option>No</option>
+              </select>
+            </div>
+
+            <div class="form-group full">
+              <p class="checkbox-label-title">What days are you available? (Select all that apply)</p>
+              <div class="checkbox-group three-col">
+                <label class="checkbox-item"><input type="checkbox" name="days[]" value="Sunday"> Sunday</label>
+                <label class="checkbox-item"><input type="checkbox" name="days[]" value="Monday"> Monday</label>
+                <label class="checkbox-item"><input type="checkbox" name="days[]" value="Tuesday"> Tuesday</label>
+                <label class="checkbox-item"><input type="checkbox" name="days[]" value="Wednesday"> Wednesday</label>
+                <label class="checkbox-item"><input type="checkbox" name="days[]" value="Thursday"> Thursday</label>
+                <label class="checkbox-item"><input type="checkbox" name="days[]" value="Friday"> Friday</label>
+                <label class="checkbox-item"><input type="checkbox" name="days[]" value="Saturday"> Saturday</label>
+                <label class="checkbox-item"><input type="checkbox" name="days[]" value="Varies"> My schedule changes frequently</label>
+              </div>
+            </div>
+
+            <div class="form-group full">
+              <p class="checkbox-label-title">What holidays are you available to work? (Select all that apply)</p>
+              <div class="checkbox-group three-col">
+                <label class="checkbox-item"><input type="checkbox" name="holidays[]" value="New Years Eve"> New Year's Eve</label>
+                <label class="checkbox-item"><input type="checkbox" name="holidays[]" value="New Years Day"> New Year's Day</label>
+                <label class="checkbox-item"><input type="checkbox" name="holidays[]" value="Easter"> Easter</label>
+                <label class="checkbox-item"><input type="checkbox" name="holidays[]" value="Memorial Day"> Memorial Day</label>
+                <label class="checkbox-item"><input type="checkbox" name="holidays[]" value="July 4th"> July 4th</label>
+                <label class="checkbox-item"><input type="checkbox" name="holidays[]" value="Labor Day"> Labor Day</label>
+                <label class="checkbox-item"><input type="checkbox" name="holidays[]" value="Thanksgiving"> Thanksgiving</label>
+                <label class="checkbox-item"><input type="checkbox" name="holidays[]" value="Christmas Eve"> Christmas Eve</label>
+                <label class="checkbox-item"><input type="checkbox" name="holidays[]" value="Christmas Day"> Christmas Day</label>
+                <label class="checkbox-item"><input type="checkbox" name="holidays[]" value="None"> I cannot work any holidays</label>
+              </div>
+            </div>
+
+            <div class="form-group full">
+              <p class="checkbox-label-title">What shift do you prefer working? (Select all that apply)</p>
+              <div class="checkbox-group">
+                <label class="checkbox-item"><input type="checkbox" name="shifts[]" value="7am-11am"> 7:00 AM – 11:00 AM</label>
+                <label class="checkbox-item"><input type="checkbox" name="shifts[]" value="11am-3pm"> 11:00 AM – 3:00 PM</label>
+                <label class="checkbox-item"><input type="checkbox" name="shifts[]" value="3pm-7pm"> 3:00 PM – 7:00 PM</label>
+                <label class="checkbox-item"><input type="checkbox" name="shifts[]" value="7pm-11pm"> 7:00 PM – 11:00 PM</label>
+                <label class="checkbox-item"><input type="checkbox" name="shifts[]" value="No preference"> No preference</label>
+              </div>
+            </div>
+
+            <div class="form-group full">
+              <p class="checkbox-label-title">How many hours per week do you prefer?</p>
+              <div class="checkbox-group">
+                <label class="checkbox-item"><input type="checkbox" name="hours[]" value="<10"> Less than 10 hours</label>
+                <label class="checkbox-item"><input type="checkbox" name="hours[]" value="10-20"> 10–20 hours</label>
+                <label class="checkbox-item"><input type="checkbox" name="hours[]" value="20-30"> 20–30 hours</label>
+                <label class="checkbox-item"><input type="checkbox" name="hours[]" value="30+"> 30+ hours</label>
+              </div>
+            </div>
+
+            <div class="form-section-title">About You</div>
+
+            <div class="form-group full">
+              <label for="a-schedule">Describe your schedule/availability on a weekly basis. Are you free some weekends but not all? How late can you work? How early can you work?</label>
+              <textarea id="a-schedule" name="schedule" rows="4"></textarea>
+            </div>
+            <div class="form-group full">
+              <label for="a-why">Why do you want to work for The Purr-fect Paw?</label>
+              <textarea id="a-why" name="why" rows="4"></textarea>
+            </div>
+            <div class="form-group full">
+              <label for="a-disobedient">Do you have experience with dogs who jump or are disobedient?</label>
+              <textarea id="a-disobedient" name="disobedient_dogs" rows="3"></textarea>
+            </div>
+            <div class="form-group full">
+              <label for="a-experience">List any experience or training that you feel is relevant.</label>
+              <textarea id="a-experience" name="experience" rows="4"></textarea>
+            </div>
+            <div class="form-group full">
+              <label for="a-why-choose">Why should we choose you over another applicant?</label>
+              <textarea id="a-why-choose" name="why_choose" rows="4"></textarea>
+            </div>
+          </div>
+
+          <div class="apply-submit">
+            <button type="submit" class="btn btn-primary">Submit Application &#128062;</button>
+          </div>
+          <p class="form-note">We review all applications and will reach out within a few business days if you're a good fit.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/logo1.png" alt="The Purr-fect Paw" width="260" height="52" loading="lazy">
+          <p>Professional pet sitting and dog walking in Waco, Temple, and Central Texas since 2011.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Main Site</h5>
+          <ul>
+            <li><a href="index.html#about">About &amp; Why Choose Us</a></li>
+            <li><a href="index.html#services">Pricing &amp; Services</a></li>
+            <li><a href="index.html#reviews">Reviews</a></li>
+            <li><a href="index.html#area">Service Area</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Join the Team</h5>
+          <ul>
+            <li><a href="#about-role">About the Role</a></li>
+            <li><a href="#requirements">Requirements</a></li>
+            <li><a href="#compensation">Pay &amp; Perks</a></li>
+            <li><a href="#application">Apply Now</a></li>
+            <li><a href="https://www.facebook.com/thepurrfectpaw" rel="noopener noreferrer" target="_blank">Facebook</a></li>
+            <li><a href="https://www.instagram.com/thepurrfectpaw" rel="noopener noreferrer" target="_blank">Instagram</a></li>
+            <li><a href="apply.html">Join Our Team</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="year"></span> The Purr-fect Paw. All rights reserved.</span>
+        <span>Waco, TX &nbsp;|&nbsp; <a href="tel:+12544956578" style="color:rgba(255,255,255,0.65);">254-495-6578</a> &nbsp;|&nbsp; <a href="mailto:Info@thepurrfectpaw.com" style="color:rgba(255,255,255,0.65);">Info@thepurrfectpaw.com</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    var form = document.getElementById('apply-form');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var btn = form.querySelector('button[type="submit"]');
+        btn.textContent = 'Submitting…';
+        btn.disabled = true;
+        setTimeout(function() {
+          btn.textContent = 'Application Submitted! ✓';
+          form.reset();
+        }, 1200);
+      });
+    }
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        var id = link.getAttribute('href').slice(1);
+        var target = document.getElementById(id);
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://thepurrfectpaw.com/</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://thepurrfectpaw.com/assets/images/logo1.png</image:loc>
+      <image:title>The Purr-fect Paw — Pet Sitting &amp; Dog Walking Waco TX</image:title>
+    </image:image>
+  </url>
+
+  <!-- Apply / Join Our Team -->
+  <url>
+    <loc>https://thepurrfectpaw.com/apply.html</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Giveaway -->
+  <url>
+    <loc>https://thepurrfectpaw.com/giveaway.html</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Infographic PDF -->
+  <url>
+    <loc>https://thepurrfectpaw.com/docs/Infographic.pdf</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+</urlset>
