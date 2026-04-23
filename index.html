@@ -746,13 +746,10 @@
     <div class="container">
       <div class="area-content">
         <div class="area-maps">
-          <div class="area-map-item" id="map-waco">
-            <img src="assets/images/waco.jpg" alt="Purr-fect Paw service area map for Waco, Woodway, and Hewitt Texas" loading="lazy">
-            <div class="area-map-label">Waco, Woodway &amp; Hewitt</div>
-          </div>
-          <div class="area-map-item" id="map-temple" style="display:none;">
-            <img src="assets/images/temple.jpg" alt="Purr-fect Paw service area map for Temple and Belton Texas" loading="lazy">
-            <div class="area-map-label">Temple &amp; Belton</div>
+          <div class="area-map-item" style="padding:0; border-radius:8px; overflow:hidden;">
+            <div style="height:500px; overflow:hidden; position:relative;">
+              <iframe id="area-map-iframe" src="https://www.google.com/maps/d/u/0/embed?mid=1mmcftffu2-iRQPPUZCgmcjRqUeQ&ehbc=2E312F&ll=31.38561,-97.3012984&z=9" width="100%" height="560" style="border:0; display:block; position:absolute; top:-60px;" allowfullscreen loading="lazy"></iframe>
+            </div>
           </div>
         </div>
         <div class="area-info">
@@ -786,8 +783,9 @@
 
           <p style="font-size:0.9rem; color: var(--text-light);"><em>*$1 per mile outside Blue Zone</em></p>
 
-          <div style="display:flex; gap:12px; margin-top:16px;">
-            <button class="btn btn-primary map-switch-btn active" data-map="waco">Waco Area</button>
+          <div style="display:flex; gap:12px; margin-top:16px; flex-wrap:wrap;">
+            <button class="btn btn-outline map-switch-btn active" data-map="overview">Overview</button>
+            <button class="btn btn-outline map-switch-btn" data-map="waco">Waco Area</button>
             <button class="btn btn-outline map-switch-btn" data-map="temple">Temple Area</button>
           </div>
           <div class="map-thumbnails">
