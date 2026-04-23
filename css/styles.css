@@ -281,9 +281,14 @@ p:last-child { margin-bottom: 0; }
 
 @media (max-width: 600px) {
   .stats-row { max-width: 100%; }
-  .stat-item { padding: 16px 8px; }
-  .stat-number { font-size: 1.6rem; }
-  .stat-label { font-size: 0.58rem; letter-spacing: 0.06em; }
+  .stat-item { padding: 16px 6px; }
+  .stat-number { font-size: 1.3rem; }
+  .stat-label { font-size: 0.55rem; letter-spacing: 0.04em; }
+}
+@media (max-width: 380px) {
+  .stat-number { font-size: 1.1rem; }
+  .stat-label { font-size: 0.5rem; letter-spacing: 0.02em; }
+  .stat-item { padding: 12px 4px; }
 }
 
 .about-cta { display: flex; justify-content: center; flex-direction: column; align-items: center; gap: 12px; margin-bottom: 40px; }
@@ -299,6 +304,29 @@ p:last-child { margin-bottom: 0; }
   margin-left: -50vw;
   margin-right: -50vw;
   padding: 48px calc(50vw - 580px);
+}
+
+@media (max-width: 640px) {
+  .benefits-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    padding: 24px 20px;
+    width: 100vw;
+    left: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    scrollbar-width: none;
+  }
+  .benefits-grid::-webkit-scrollbar { display: none; }
+  .benefit-card {
+    flex: 0 0 80vw;
+    min-width: 80vw;
+    scroll-snap-align: center;
+  }
 }
 .benefit-card { padding: 24px 20px; display: flex; flex-direction: column; align-items: center; background: var(--white); border: 2px solid var(--blue-light); border-radius: var(--radius); box-shadow: var(--shadow); transition: transform var(--transition), box-shadow var(--transition); }
 .benefit-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: var(--blue); }
@@ -660,13 +688,22 @@ p:last-child { margin-bottom: 0; }
 .map-switch-btn.active { background: var(--blue); color: var(--white); border-color: var(--blue); }
 .map-switch-btn:not(.active) { background: transparent; color: var(--blue); border-color: var(--blue); }
 
-/* TEAM GRID */
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 24px;
-  margin-bottom: 40px;
+/* TEAM SLIDER */
+.team-slider-wrap { overflow: hidden; margin-bottom: 24px; }
+.team-track { display: flex; gap: 24px; transition: transform 0.5s ease; }
+.team-card {
+  flex: 0 0 calc(20% - 20px);
+  min-width: calc(20% - 20px);
+  text-align: center;
+  background: rgba(255,255,255,0.1);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.18);
+  transition: transform var(--transition), box-shadow var(--transition);
 }
+@media (max-width: 900px) { .team-card { flex: 0 0 calc(33.333% - 16px); min-width: calc(33.333% - 16px); } }
+@media (max-width: 640px) { .team-card { flex: 0 0 calc(50% - 12px); min-width: calc(50% - 12px); } }
+@media (max-width: 400px) { .team-card { flex: 0 0 calc(80% - 12px); min-width: calc(80% - 12px); } }
 .team-card {
   text-align: center;
   background: rgba(255,255,255,0.1);
@@ -888,6 +925,45 @@ p:last-child { margin-bottom: 0; }
   transform: translateY(-2px);
 }
 
+/* BENEFITS DOTS & ARROWS */
+.benefits-slider-controls {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+@media (max-width: 640px) {
+  .benefits-slider-controls { display: flex; }
+}
+.benefits-dots { display: flex; gap: 8px; }
+.benefits-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.35);
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.benefits-dot.active { background: var(--white); }
+.benefits-arrow {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.5);
+  background: transparent;
+  color: var(--white);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+  flex-shrink: 0;
+}
+.benefits-arrow:hover { background: rgba(255,255,255,0.2); border-color: var(--white); }
+
 /* ============================================================
    DARK MODE
    ============================================================ */
@@ -937,14 +1013,19 @@ body.dark-mode #FAQ { background: #222840; }
 body.dark-mode .hiw-card,
 body.dark-mode .benefit-card,
 body.dark-mode .discounts-block,
-body.dark-mode .stat-item,
-body.dark-mode .team-stats { background: #2a3050; border-color: #3a4060; }
+body.dark-mode .stat-item { background: #2a3050; border-color: #3a4060; }
+body.dark-mode .team-stat { background: #2a3050; }
 
 body.dark-mode .faq-question { color: #e8eaf2; }
 body.dark-mode .faq-answer { color: #b0b8d0; }
 body.dark-mode .faq-item { border-color: #3a4060; }
 
 body.dark-mode #navbar { background: #1a1f2e; border-color: #2a3560; }
+body.dark-mode #footer { background: #0f1520 !important; }
+body.dark-mode .footer-brand p,
+body.dark-mode .footer-col ul a,
+body.dark-mode .footer-bottom { color: rgba(255,255,255,0.65); }
+body.dark-mode .footer-col h5 { color: rgba(255,255,255,0.9); }
 body.dark-mode .nav-links a { color: #aabfe4; }
 body.dark-mode #mobile-nav { background: #1a1f2e; border-color: #2a3560; }
 body.dark-mode #mobile-nav a { color: #aabfe4; border-color: #2a3050; }
@@ -961,3 +1042,4 @@ body.dark-mode .discounts-block p strong { color: #e8eaf2; }
 
 body.dark-mode #dark-toggle { background: #3a4060; }
 body.dark-mode #dark-toggle:hover { background: #4a5070; }
+

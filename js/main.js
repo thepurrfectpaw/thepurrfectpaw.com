@@ -98,9 +98,13 @@ document.addEventListener('DOMContentLoaded', function () {
     var total = Math.ceil(cards.length / perView);
 
     function goTo(idx) {
-      current = Math.max(0, Math.min(idx, total - 1));
-      var cardWidth = cards[0].offsetWidth + 24; // 24 = gap
-      track.style.transform = 'translateX(-' + (current * perView * cardWidth) + 'px)';
+      current = (idx + total) % total;
+      var cardEl = cards[0];
+      var style = window.getComputedStyle(track);
+      var gap = parseInt(style.gap || style.columnGap || '20', 10);
+      var cardWidth = cardEl.getBoundingClientRect().width + gap;
+      var offset = current * perView * cardWidth;
+      track.style.transform = 'translateX(-' + offset + 'px)';
       dots.forEach(function (d, i) { d.classList.toggle('active', i === current); });
     }
 
@@ -111,15 +115,12 @@ document.addEventListener('DOMContentLoaded', function () {
       dot.addEventListener('click', function () { goTo(i); });
     });
 
-    // Auto-advance every 6 seconds
     var autoSlide = setInterval(function () {
-      goTo(current + 1 < total ? current + 1 : 0);
+      goTo(current + 1);
     }, 6000);
 
-    // Pause on hover
     track.addEventListener('mouseenter', function () { clearInterval(autoSlide); });
 
-    // Recalculate on resize
     window.addEventListener('resize', function () {
       perView = window.innerWidth < 640 ? 1 : window.innerWidth < 900 ? 2 : 3;
       total = Math.ceil(cards.length / perView);
@@ -444,7 +445,58 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  /* FAQ TABS */
+  /* TEAM SLIDER */
+  var teamTrack = document.querySelector('.team-track');
+  var teamCards = document.querySelectorAll('.team-card');
+  var teamDotsContainer = document.getElementById('team-dots');
+  var teamPrev = document.getElementById('team-prev');
+  var teamNext = document.getElementById('team-next');
+
+  if (teamTrack && teamCards.length) {
+    var teamCurrent = 0;
+    var teamPerView = window.innerWidth < 400 ? 1 : window.innerWidth < 640 ? 2 : window.innerWidth < 900 ? 3 : 5;
+    var teamTotal = Math.ceil(teamCards.length / teamPerView);
+
+    function buildTeamDots() {
+      if (!teamDotsContainer) return;
+      teamDotsContainer.innerHTML = '';
+      for (var i = 0; i < teamTotal; i++) {
+        var dot = document.createElement('button');
+        dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Team page ' + (i + 1));
+        teamDotsContainer.appendChild(dot);
+        (function(idx) {
+          dot.addEventListener('click', function() { goToTeam(idx); });
+        })(i);
+      }
+    }
+
+    function goToTeam(idx) {
+      teamCurrent = (idx + teamTotal) % teamTotal;
+      var cardWidth = teamCards[0].offsetWidth + 24;
+      teamTrack.style.transform = 'translateX(-' + (teamCurrent * teamPerView * cardWidth) + 'px)';
+      if (teamDotsContainer) {
+        teamDotsContainer.querySelectorAll('.slider-dot').forEach(function(d, i) {
+          d.classList.toggle('active', i === teamCurrent);
+        });
+      }
+    }
+
+    buildTeamDots();
+
+    if (teamPrev) teamPrev.addEventListener('click', function() { goToTeam(teamCurrent - 1); });
+    if (teamNext) teamNext.addEventListener('click', function() { goToTeam(teamCurrent + 1); });
+
+    var teamAuto = setInterval(function() { goToTeam(teamCurrent + 1); }, 5000);
+    if (teamTrack) teamTrack.addEventListener('mouseenter', function() { clearInterval(teamAuto); });
+
+    window.addEventListener('resize', function() {
+      teamPerView = window.innerWidth < 400 ? 1 : window.innerWidth < 640 ? 2 : window.innerWidth < 900 ? 3 : 5;
+      teamTotal = Math.ceil(teamCards.length / teamPerView);
+      buildTeamDots();
+      goToTeam(0);
+    });
+  }
   document.querySelectorAll('.faq-tab').forEach(function(tab) {
     tab.addEventListener('click', function() {
       document.querySelectorAll('.faq-tab').forEach(function(t) {
@@ -493,5 +545,64 @@ document.addEventListener('DOMContentLoaded', function () {
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && photoModal.style.display === 'flex') closePhotoModal();
   });
-  
+
+  /* BENEFITS SLIDER DOTS (mobile) */
+  var benefitsGrid = document.querySelector('.benefits-grid');
+  var benefitsDots = document.getElementById('benefits-dots');
+
+  function initBenefitsDots() {
+    if (!benefitsGrid || !benefitsDots) return;
+    if (window.innerWidth > 640) { benefitsDots.innerHTML = ''; return; }
+
+    var cards = benefitsGrid.querySelectorAll('.benefit-card');
+    benefitsDots.innerHTML = '';
+    cards.forEach(function(_, i) {
+      var dot = document.createElement('button');
+      dot.className = 'benefits-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Benefit ' + (i + 1));
+      benefitsDots.appendChild(dot);
+      dot.addEventListener('click', function() {
+        var cardWidth = cards[0].offsetWidth + 16;
+        benefitsGrid.scrollTo({ left: i * cardWidth, behavior: 'smooth' });
+      });
+    });
+
+    benefitsGrid.addEventListener('scroll', function() {
+      var cardWidth = cards[0].offsetWidth + 16;
+      var current = Math.round(benefitsGrid.scrollLeft / cardWidth);
+      benefitsDots.querySelectorAll('.benefits-dot').forEach(function(d, i) {
+        d.classList.toggle('active', i === current);
+      });
+    });
+  }
+
+  initBenefitsDots();
+  window.addEventListener('resize', initBenefitsDots);
+
+  var benefitsPrev = document.getElementById('benefits-prev');
+  var benefitsNext = document.getElementById('benefits-next');
+
+  if (benefitsPrev && benefitsNext && benefitsGrid) {
+    benefitsPrev.addEventListener('click', function() {
+      var cards = benefitsGrid.querySelectorAll('.benefit-card');
+      if (!cards.length) return;
+      var cardWidth = cards[0].offsetWidth + 16;
+      if (benefitsGrid.scrollLeft <= 10) {
+        benefitsGrid.scrollTo({ left: benefitsGrid.scrollWidth, behavior: 'smooth' });
+      } else {
+        benefitsGrid.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+      }
+    });
+    benefitsNext.addEventListener('click', function() {
+      var cards = benefitsGrid.querySelectorAll('.benefit-card');
+      if (!cards.length) return;
+      var cardWidth = cards[0].offsetWidth + 16;
+      var maxScroll = benefitsGrid.scrollWidth - benefitsGrid.clientWidth;
+      if (benefitsGrid.scrollLeft >= maxScroll - 10) {
+        benefitsGrid.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        benefitsGrid.scrollBy({ left: cardWidth, behavior: 'smooth' });
+      }
+    });
+  }
 });
