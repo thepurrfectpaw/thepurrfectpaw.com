@@ -155,13 +155,17 @@ document.addEventListener('DOMContentLoaded', function () {
       });
 
       // Open clicked if it was closed
-      if (!isOpen) item.classList.add('open');
+      if (!isOpen) {
+  item.classList.add('open');
+  btn.setAttribute('aria-expanded', 'true');
+} else {
+  btn.setAttribute('aria-expanded', 'false');
+}
     });
   });
 
   /* ----------------------------------------------------------
-     CONTACT FORM — basic client-side handling
-     (Replace action URL with Formspree endpoint when ready)
+     CONTACT FORM — EmailJS
   ---------------------------------------------------------- */
   // EmailJS
   if (typeof emailjs !== 'undefined') {

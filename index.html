@@ -20,16 +20,12 @@
   <meta property="og:url" content="https://thepurrfectpaw.com/">
   <meta property="og:title" content="Pet Sitting &amp; Dog Walking | The Purr-fect Paw | Waco, TX">
   <meta property="og:description" content="Professional pet sitting and dog walking in Waco, Temple, and surrounding Central Texas areas. Insured, bonded, certified. Free meet &amp; greet.">
-  <meta property="og:image" content="https://thepurrfectpaw.com/assets/images/logo1.png">
+  <meta property="og:image" content="https://thepurrfectpaw.com/assets/images/gallery-1.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:site_name" content="The Purr-fect Paw">
 
-  <!-- =====================================================
-       SEO — Twitter Card
-       ===================================================== -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Pet Sitting &amp; Dog Walking | The Purr-fect Paw | Waco, TX">
-  <meta name="twitter:description" content="Professional in-home pet sitting and dog walking in Waco, TX. Insured, bonded, certified sitters.">
-  <meta name="twitter:image" content="https://thepurrfectpaw.com/assets/images/logo1.png">
+  
 
   <!-- =====================================================
        SEO — Local Business Structured Data (JSON-LD)
@@ -88,43 +84,35 @@
       "@type": "GeoCoordinates",
       "latitude": 31.5493,
       "longitude": -97.1467
-    }
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Tanner O." },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "Everyone we've worked with has been kind, knowledgeable, and dependable. We love that our dogs get to sleep in their own beds and play in their own yard while we are away."
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Jana C." },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "The Purr-fect Paw is wonderful! I have used their services for over two years and am super pleased. It is always comforting knowing the fur babies are taken care of when we are gone."
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Samantha S." },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "The Purr-fect Paw is such a wonderful and professional company for my animals! They give me such peace of mind and are extremely reliable."
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Kristal L." },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "So grateful for Purrfect Paw! We don't worry about anything when we go out of town — they take amazing care of our pups and house!"
+      }
+    ]
   }
   </script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "The Purr-fect Paw",
-  "url": "https://thepurrfectpaw.com",
-  "review": [
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Tanner O." },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "Everyone we've worked with has been kind, knowledgeable, and dependable. We love that our dogs get to sleep in their own beds and play in their own yard while we are away."
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Jana C." },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "The Purr-fect Paw is wonderful! I have used their services for over two years and am super pleased. It is always comforting knowing the fur babies are taken care of when we are gone."
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Samantha S." },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "The Purr-fect Paw is such a wonderful and professional company for my animals! They give me such peace of mind and are extremely reliable."
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Kristal L." },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "So grateful for Purrfect Paw! We don't worry about anything when we go out of town — they take amazing care of our pups and house!"
-    }
-  ]
-}
-</script>
 
   <!-- =====================================================
        Security Headers (via meta — full headers set by GitHub Pages _headers file)
@@ -141,24 +129,30 @@
   <!-- =====================================================
        Fonts & Styles
        ===================================================== -->
-  <link rel="preload" as="image" href="assets/images/gallery-1.jpg">
+  <link rel="preload" as="image" href="assets/images/gallery-1.webp" fetchpriority="high">
+  <link rel="preload" as="fetch" href="assets/videos/commercial.mp4" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap"></noscript>
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
   <link rel="stylesheet" href="css/styles.css">
 
   <!-- =====================================================
        Facebook Pixel (preserved from original site)
        ===================================================== -->
   <script>
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-    document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '871531419647687');
-    fbq('track', 'PageView');
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '871531419647687');
+        fbq('track', 'PageView');
+      }, 2000);
+    });
   </script>
   <noscript>
     <img height="1" width="1" style="display:none" alt=""
@@ -241,7 +235,7 @@
           <video autoplay muted loop playsinline preload="auto"
             aria-hidden="true"
             x-webkit-airplay="deny"
-            poster="assets/images/gallery-1.jpg">
+            poster="assets/images/gallery-1.webp">
             <source src="assets/videos/commercial.mp4" type="video/mp4">
           </video>
           <div class="video-play-btn" aria-label="Play video">&#9654;</div>
@@ -414,14 +408,14 @@
         <button class="gallery-arrow prev" id="gallery1-prev" aria-label="Previous photos">&#8592;</button>
         <div class="gallery-strip-overflow">
         <div class="gallery-strip-track" id="gallery1-track">
-          <img src="assets/images/gallery-1.jpg" alt="Dog walking service in Waco TX" loading="lazy">
-          <img src="assets/images/gallery-2.jpg" alt="Pet sitting service in Waco TX" loading="lazy">
-          <img src="assets/images/gallery-3.jpg" alt="Happy pets with The Purr-fect Paw" loading="lazy">
-          <img src="assets/images/gallery-4.jpg" alt="Dog walking in Central Texas" loading="lazy">
-          <img src="assets/images/gallery-5.jpg" alt="In-home pet sitting Waco" loading="lazy">
-          <img src="assets/images/gallery-6.jpg" alt="Professional dog care Waco TX" loading="lazy">
-          <img src="assets/images/gallery-7.jpg" alt="Puppy care and sitting Waco" loading="lazy">
-          <img src="assets/images/gallery-8.jpg" alt="Cat sitting service Waco TX" loading="lazy">
+          <img src="assets/images/gallery-1.webp" alt="Dog walking service in Waco TX" loading="lazy">
+          <img src="assets/images/gallery-2.webp" alt="Pet sitting service in Waco TX" loading="lazy">
+          <img src="assets/images/gallery-3.webp" alt="Happy pets with The Purr-fect Paw" loading="lazy">
+          <img src="assets/images/gallery-4.webp" alt="Dog walking in Central Texas" loading="lazy">
+          <img src="assets/images/gallery-5.webp" alt="In-home pet sitting Waco" loading="lazy">
+          <img src="assets/images/gallery-6.webp" alt="Professional dog care Waco TX" loading="lazy">
+          <img src="assets/images/gallery-7.webp" alt="Puppy care and sitting Waco" loading="lazy">
+          <img src="assets/images/gallery-8.webp" alt="Cat sitting service Waco TX" loading="lazy">
         </div>
         </div>
         <button class="gallery-arrow next" id="gallery1-next" aria-label="Next photos">&#8594;</button>
@@ -836,7 +830,7 @@
         <div class="team-track">
         <div class="team-card">
           <div class="team-photo-wrap">
-            <img src="assets/images/member-1.jpg" alt="Justin G. Owner of The Purr-fect Paw" loading="lazy">
+            <img src="assets/images/member-1.webp" alt="Justin G. Owner of The Purr-fect Paw" loading="lazy">
           </div>
           <div class="team-card-info">
             <h4>Justin G.</h4>
@@ -846,7 +840,7 @@
         </div>
         <div class="team-card">
           <div class="team-photo-wrap">
-            <img src="assets/images/member-2.jpg" alt="Tiffany M. Manager" loading="lazy">
+            <img src="assets/images/member-2.webp" alt="Tiffany M. Manager" loading="lazy">
           </div>
           <div class="team-card-info">
             <h4>Tiffany M.</h4>
@@ -856,7 +850,7 @@
         </div>
         <div class="team-card">
           <div class="team-photo-wrap">
-            <img src="assets/images/member-3.jpg" alt="Sharon U. Team Leader" loading="lazy">
+            <img src="assets/images/member-3.webp" alt="Sharon U. Team Leader" loading="lazy">
           </div>
           <div class="team-card-info">
             <h4>Sharon U.</h4>
@@ -866,7 +860,7 @@
         </div>
         <div class="team-card">
           <div class="team-photo-wrap">
-            <img src="assets/images/member-4.jpg" alt="Kayla G. Pet Sitter and Dog Walker" loading="lazy">
+            <img src="assets/images/member-4.webp" alt="Kayla G. Pet Sitter and Dog Walker" loading="lazy">
           </div>
           <div class="team-card-info">
             <h4>Kayla G.</h4>
@@ -876,7 +870,7 @@
         </div>
         <div class="team-card">
           <div class="team-photo-wrap">
-            <img src="assets/images/member-5.jpg" alt="Cheryl D. Pet Sitter and Dog Walker" loading="lazy">
+            <img src="assets/images/member-5.webp" alt="Cheryl D. Pet Sitter and Dog Walker" loading="lazy">
           </div>
           <div class="team-card-info">
             <h4>Cheryl D.</h4>
@@ -886,7 +880,7 @@
         </div>
         <div class="team-card">
           <div class="team-photo-wrap">
-            <img src="assets/images/member-6.jpg" alt="Karen K. Pet Sitter and Dog Walker" loading="lazy">
+            <img src="assets/images/member-6.webp" alt="Karen K. Pet Sitter and Dog Walker" loading="lazy">
           </div>
           <div class="team-card-info">
             <h4>Karen K.</h4>
@@ -896,7 +890,7 @@
         </div>
         <div class="team-card">
           <div class="team-photo-wrap">
-            <img src="assets/images/member-7.jpg" alt="Kirstin D. Pet Sitter and Dog Walker" loading="lazy">
+            <img src="assets/images/member-7.webp" alt="Kirstin D. Pet Sitter and Dog Walker" loading="lazy">
           </div>
           <div class="team-card-info">
             <h4>Kirstin D.</h4>
@@ -906,7 +900,7 @@
         </div>
         <div class="team-card">
           <div class="team-photo-wrap">
-            <img src="assets/images/member-8.jpg" alt="Elyse B. Pet Sitter and Dog Walker" loading="lazy">
+            <img src="assets/images/member-8.webp" alt="Elyse B. Pet Sitter and Dog Walker" loading="lazy">
           </div>
           <div class="team-card-info">
             <h4>Elyse B.</h4>
@@ -926,7 +920,7 @@
         </div>
                 <div class="team-card">
           <div class="team-photo-wrap">
-            <img src="assets/images/member-20.jpg" alt="Elyse B. Pet Sitter and Dog Walker" loading="lazy">
+            <img src="assets/images/member-20.webp" alt="Elyse B. Pet Sitter and Dog Walker" loading="lazy">
           </div>
           <div class="team-card-info">
             <h4>Korbin G.</h4>
@@ -936,7 +930,7 @@
         </div>
         <div class="team-card">
           <div class="team-photo-wrap">
-            <img src="assets/images/member-9.jpg" alt="Cody H. Pet Sitter and Dog Walker" loading="lazy">
+            <img src="assets/images/member-9.webp" alt="Cody H. Pet Sitter and Dog Walker" loading="lazy">
           </div>
           <div class="team-card-info">
             <h4>Cody H.</h4>
@@ -946,7 +940,7 @@
         </div>
         <div class="team-card">
           <div class="team-photo-wrap">
-            <img src="assets/images/member-10.jpg" alt="Danielle P. Pet Sitter and Dog Walker" loading="lazy">
+            <img src="assets/images/member-10.webp" alt="Danielle P. Pet Sitter and Dog Walker" loading="lazy">
           </div>
           <div class="team-card-info">
             <h4>Danielle P.</h4>
@@ -957,7 +951,7 @@
 
         <div class="team-card">
           <div class="team-photo-wrap">
-            <img src="assets/images/member-11.jpg" alt="Haylee B. Pet Sitter and Dog Walker" loading="lazy">
+            <img src="assets/images/member-11.webp" alt="Haylee B. Pet Sitter and Dog Walker" loading="lazy">
           </div>
           <div class="team-card-info">
             <h4>Haylee B.</h4>
@@ -967,7 +961,7 @@
         </div>
         <div class="team-card">
           <div class="team-photo-wrap">
-            <img src="assets/images/member-16.jpg" alt="Holly P. Pet Sitter and Dog Walker" loading="lazy">
+            <img src="assets/images/member-16.webp" alt="Holly P. Pet Sitter and Dog Walker" loading="lazy">
           </div>
           <div class="team-card-info">
             <h4>Holly P.</h4>
@@ -977,7 +971,7 @@
         </div>
           <div class="team-card">
           <div class="team-photo-wrap">
-            <img src="assets/images/member-12.jpg" alt="Elyse B. Pet Sitter and Dog Walker" loading="lazy">
+            <img src="assets/images/member-12.webp" alt="Elyse B. Pet Sitter and Dog Walker" loading="lazy">
           </div>
           <div class="team-card-info">
             <h4>Easton C.</h4>
@@ -1018,14 +1012,14 @@
       <div class="gallery-strip" role="region" aria-label="Pet care photo gallery">
         <button class="gallery-arrow prev" id="gallery2-prev" aria-label="Previous photos">&#8592;</button>
         <div class="gallery-strip-overflow"><div class="gallery-strip-track" id="gallery2-track">
-          <img src="assets/images/gallery-9.jpg" alt="Dog walking service in Waco TX" loading="lazy">
-          <img src="assets/images/gallery-10.jpg" alt="Pet sitting service in Waco TX" loading="lazy">
-          <img src="assets/images/gallery-11.jpg" alt="Happy pets with The Purr-fect Paw" loading="lazy">
-          <img src="assets/images/gallery-12.jpg" alt="Dog walking in Central Texas" loading="lazy">
-          <img src="assets/images/gallery-13.jpg" alt="In-home pet sitting Waco" loading="lazy">
-          <img src="assets/images/gallery-14.jpg" alt="Professional dog care Waco TX" loading="lazy">
-          <img src="assets/images/gallery-15.jpg" alt="Puppy care and sitting Waco" loading="lazy">
-          <img src="assets/images/gallery-16.jpg" alt="Cat sitting service Waco TX" loading="lazy">
+          <img src="assets/images/gallery-9.webp" alt="Dog walking service in Waco TX" loading="lazy">
+          <img src="assets/images/gallery-10.webp" alt="Pet sitting service in Waco TX" loading="lazy">
+          <img src="assets/images/gallery-11.webp" alt="Happy pets with The Purr-fect Paw" loading="lazy">
+          <img src="assets/images/gallery-12.webp" alt="Dog walking in Central Texas" loading="lazy">
+          <img src="assets/images/gallery-13.webp" alt="In-home pet sitting Waco" loading="lazy">
+          <img src="assets/images/gallery-14.webp" alt="Professional dog care Waco TX" loading="lazy">
+          <img src="assets/images/gallery-15.webp" alt="Puppy care and sitting Waco" loading="lazy">
+          <img src="assets/images/gallery-16.webp" alt="Cat sitting service Waco TX" loading="lazy">
         </div></div>
         <button class="gallery-arrow next" id="gallery2-next" aria-label="Next photos">&#8594;</button>
       </div>
@@ -1358,6 +1352,75 @@
     // Auto-update copyright year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What pets do you care for?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We take care of all pets! Dogs, cats, horses, goats, chickens, rabbits, snakes, and many other different pets." }
+    },
+    {
+      "@type": "Question",
+      "name": "Will I have the same sitter?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We strive to provide consistency in pet care by assigning the same sitter to your pets whenever possible. However, in some cases it may be necessary to assign two or more sitters. Each sitter will have access to your pet care instructions to ensure the same level of loving care every time." }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I trust your sitters?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We conduct background checks on all of our sitters, and provide insurance and bonding for added protection. Our sitters must complete our Certified Pet Sitter program before being entrusted with the care of your pets." }
+    },
+    {
+      "@type": "Question",
+      "name": "What does being a Certified Pet Sitter mean?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We partner with FetchFind. Our sitters undergo extensive training, watching 12–15 hours of educational material covering feline fundamentals, canine behavior, communication, bite prevention, canine health and more." }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if I live outside the service area?",
+      "acceptedAnswer": { "@type": "Answer", "text": "There is a Gas Surcharge of $0.25 per mile. We do not provide pet care if you live more than 3 miles outside our service area." }
+    },
+    {
+      "@type": "Question",
+      "name": "How will the sitters access my home?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We do not retain keys. We provide the option to purchase a lockbox for $15, or you can provide your own with a four-digit combination. We do not accept garage openers or hold keys in our office." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I know the sitter is actually showing up?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We use Time to Pet software. Sitters scan in upon arrival and you receive an email/text alert with a detailed visit report and photos upon departure." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there an extra charge for multiple pets?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We will NEVER charge you more for having multiple pets. We only charge for the amount of time our sitters spend taking care of your furry family." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you charge extra for holidays?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Minor Holiday Surcharge (Easter, 4th of July, Memorial Day, Labor Day): $10 per visit. Major Holiday Surcharge (Thanksgiving, Christmas Eve & Christmas Day): $20 per visit." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer any discounts?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes! Single Pet Discount: 10% off for households with one pet. Daily Discount: 5% off when booking 10+ visits per month. Cash Discount: 5% off when paying in cash." }
+    },
+    {
+      "@type": "Question",
+      "name": "What time will the sitter arrive?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Earliest arrival is 7:00–9:00 AM, latest is 8:00–10:00 PM. Early (6–7 AM) or late (after 10 PM) visits are available for an additional $10 per visit." }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I need to book a last minute visit?",
+      "acceptedAnswer": { "@type": "Answer", "text": "There is a $20 charge for same-day and $15 for next-day requests. New clients must schedule a meet & greet at least 3 days before their first visit." }
+    }
+  ]
+}
+</script>
 
 <!-- Photo Lightbox Modal -->
   <div id="photo-modal" style="display:none; position:fixed; inset:0; z-index:9998; background:rgba(0,0,0,0.9); align-items:center; justify-content:center; cursor:pointer;">
