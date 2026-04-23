@@ -326,6 +326,7 @@ p:last-child { margin-bottom: 0; }
     flex: 0 0 80vw;
     min-width: 80vw;
     scroll-snap-align: center;
+    scroll-snap-stop: always;
   }
 }
 .benefit-card { padding: 24px 20px; display: flex; flex-direction: column; align-items: center; background: var(--white); border: 2px solid var(--blue-light); border-radius: var(--radius); box-shadow: var(--shadow); transition: transform var(--transition), box-shadow var(--transition); scroll-snap-align: center; }
