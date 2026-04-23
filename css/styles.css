@@ -147,6 +147,7 @@ p:last-child { margin-bottom: 0; }
 #topbar .topbar-left { display: flex; gap: 24px; align-items: center; }
 #topbar .topbar-left span { display: flex; align-items: center; gap: 6px; color: var(--white); }
 #topbar a { color: var(--white); }
+#topbar span { color: var(--white); }
 #topbar a:hover { text-decoration: underline; }
 #topbar .topbar-right { font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.78rem; }
 #topbar .topbar-right a { background: rgba(255,255,255,0.15); padding: 4px 14px; border-radius: 3px; transition: background var(--transition); }
