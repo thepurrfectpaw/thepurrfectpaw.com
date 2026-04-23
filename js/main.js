@@ -459,26 +459,27 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* MAP SWITCHER */
+  var mapUrls = {
+    overview: 'https://www.google.com/maps/d/u/0/embed?mid=1mmcftffu2-iRQPPUZCgmcjRqUeQ&ehbc=2E312F&ll=31.38561,-97.3012984&z=9',
+    waco:     'https://www.google.com/maps/d/u/0/embed?mid=1mmcftffu2-iRQPPUZCgmcjRqUeQ&ehbc=2E312F&ll=31.5493,-97.2167&z=11',
+    temple:   'https://www.google.com/maps/d/u/0/embed?mid=1mmcftffu2-iRQPPUZCgmcjRqUeQ&ehbc=2E312F&ll=31.1202,-97.4800&z=11',
+  };
+
   document.querySelectorAll('.map-switch-btn').forEach(function(btn) {
     btn.addEventListener('click', function() {
       var target = btn.getAttribute('data-map');
-
       document.querySelectorAll('.map-switch-btn').forEach(function(b) {
         b.classList.remove('active');
+        b.classList.add('btn-outline');
+        b.classList.remove('btn-primary');
       });
       btn.classList.add('active');
-
-      // Desktop maps
-      var wacoMap = document.getElementById('map-waco');
-      var templeMap = document.getElementById('map-temple');
-      if (wacoMap) wacoMap.style.display = target === 'waco' ? 'block' : 'none';
-      if (templeMap) templeMap.style.display = target === 'temple' ? 'block' : 'none';
-
-      // Mobile thumbnails
-      var wacoThumb = document.getElementById('thumb-waco');
-      var templeThumb = document.getElementById('thumb-temple');
-      if (wacoThumb) wacoThumb.style.display = target === 'waco' ? 'block' : 'none';
-      if (templeThumb) templeThumb.style.display = target === 'temple' ? 'block' : 'none';
+      btn.classList.remove('btn-outline');
+      btn.classList.add('btn-primary');
+      var iframe = document.getElementById('area-map-iframe');
+      if (iframe && mapUrls[target]) {
+        iframe.src = mapUrls[target] + '&t=' + Date.now();
+      }
     });
   });
 
@@ -666,4 +667,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }
+
+
 });
