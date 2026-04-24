@@ -230,7 +230,7 @@
         <!-- Video LEFT -->
         <div class="hero-video-wrap" id="hero-video-thumb" title="Click to watch full screen">
           <video autoplay muted loop playsinline preload="auto"
-            aria-hidden="true"
+            aria-hidden="true" tabindex="-1"
             x-webkit-airplay="deny"
             poster="assets/images/video-static.webp">
             <source src="assets/videos/commercial.mp4" type="video/mp4">
@@ -252,6 +252,7 @@
     </div>
   </section>
 
+  <main id="main-content">
   <!-- =====================================================
        HOW IT WORKS
        ===================================================== -->
@@ -284,6 +285,23 @@
         <a href="https://youtu.be/-UcRqKIkTFg" class="btn btn-outline" rel="noopener noreferrer" target="_blank">Watch How It Works</a>
         
         <a href="https://www.timetopet.com/portal/thepurrfectpaw/create-account" class="btn btn-primary" rel="noopener noreferrer" target="_blank">Book Now</a>
+      </div>
+            <!-- Gallery Strip 1 -->
+      <div class="gallery-strip" role="region" aria-label="Pet care photo gallery">
+        <button class="gallery-arrow prev" id="gallery1-prev" aria-label="Previous photos">&#8592;</button>
+        <div class="gallery-strip-overflow">
+        <div class="gallery-strip-track" id="gallery1-track">
+          <img src="assets/images/gallery-1.webp" alt="Dog walking service in Waco TX" loading="lazy">
+          <img src="assets/images/gallery-2.webp" alt="Pet sitting service in Waco TX" loading="lazy">
+          <img src="assets/images/gallery-3.webp" alt="Happy pets with The Purr-fect Paw" loading="lazy">
+          <img src="assets/images/gallery-4.webp" alt="Dog walking in Central Texas" loading="lazy">
+          <img src="assets/images/gallery-5.webp" alt="In-home pet sitting Waco" loading="lazy">
+          <img src="assets/images/gallery-6.webp" alt="Professional dog care Waco TX" loading="lazy">
+          <img src="assets/images/gallery-7.webp" alt="Puppy care and sitting Waco" loading="lazy">
+          <img src="assets/images/gallery-8.webp" alt="Cat sitting service Waco TX" loading="lazy">
+        </div>
+        </div>
+        <button class="gallery-arrow next" id="gallery1-next" aria-label="Next photos">&#8594;</button>
       </div>
     </div>
   </section>
@@ -319,77 +337,77 @@
       <div class="benefits-grid">
         <div class="benefit-card">
           <img src="assets/images/icon-consultation.png" alt="" aria-hidden="true" loading="lazy">
-          <h4>Free In-Home Consultation</h4>
+          <h3>Free In-Home Consultation</h3>
           <p>We believe that you and your pet should feel comfortable with us. That's why we offer a free meet &amp; greet in your home beforehand to ensure everyone is comfortable before beginning.</p>
         </div>
         <div class="benefit-card">
           <img src="assets/images/icon-verify.png" alt="" aria-hidden="true" loading="lazy">
-          <h4>Service Verification</h4>
+          <h3>Service Verification</h3>
           <p>Don't stress about what time your pet sitter arrived and departed. When your sitter checks-in/checks out the GPS coordinates are recorded, giving you the exact time of care.</p>
         </div>
         <div class="benefit-card">
           <img src="assets/images/icon-happier-pets.png" alt="" aria-hidden="true" loading="lazy">
-          <h4>Happier Pets</h4>
+          <h3>Happier Pets</h3>
           <p>Pets experience less stress when they remain in an environment where all sights, smells, and sounds are familiar. Allowing them to stay home will ensure their normal routine stays uninterrupted.</p>
         </div>
         <div class="benefit-card">
           <img src="assets/images/icon-transport.png" alt="" aria-hidden="true" loading="lazy">
-          <h4>Transportation Eliminated</h4>
+          <h3>Transportation Eliminated</h3>
           <p>Not all pets enjoy riding in the car, especially cats, or maybe you have too many dogs. No more inconveniences dropping off and picking up again.</p>
         </div>
         <div class="benefit-card">
           <img src="assets/images/icon-available.png" alt="" aria-hidden="true" loading="lazy">
-          <h4>Available Everyday</h4>
+          <h3>Available Everyday</h3>
           <p>We take the time and hassle out of finding the purr-fect care for your pets. We're available whenever and wherever you need us – even during the holidays!</p>
         </div>
         <div class="benefit-card">
           <img src="assets/images/icon-insured.png" alt="" aria-hidden="true" loading="lazy">
-          <h4>Insured &amp; Bonded</h4>
+          <h3>Insured &amp; Bonded</h3>
           <p>Confidently leave your pets with us, knowing that we're insured and bonded. This means that your property and pets are fully covered, should anything occur on our watch.</p>
         </div>
         <div class="benefit-card">
           <img src="assets/images/icon-gps.png" alt="" aria-hidden="true" loading="lazy">
-          <h4>GPS Tracking</h4>
+          <h3>GPS Tracking</h3>
           <p>You know the exact time we arrived; now you want to make sure your dog got their exercise. Our maps will show you the starting and endpoint of our dog walk, giving you a peace of mind.</p>
         </div>
         <div class="benefit-card">
           <img src="assets/images/icon-healthier.png" alt="" aria-hidden="true" loading="lazy">
-          <h4>Healthier Dogs &amp; Cats</h4>
+          <h3>Healthier Dogs &amp; Cats</h3>
           <p>Eliminate your pet's exposure to parasites or contagious diseases that can be present in boarding or daycare facilities. Dogs can return with kennel cough and cats with upper respiratory illnesses.</p>
         </div>
         <div class="benefit-card">
           <img src="assets/images/icon-certified.png" alt="" aria-hidden="true" loading="lazy">
-          <h4>Certified Pet Sitters</h4>
+          <h3>Certified Pet Sitters</h3>
           <p>Our sitters are animal lovers who get what your pets need – love and attention! Our pet care specialists are insured, bonded, background checked, and complete our Certified Pet Sitter course.</p>
         </div>
         <div class="benefit-card">
           <img src="assets/images/icon-reputation.png" alt="" aria-hidden="true" loading="lazy">
-          <h4>Glowing Reputation</h4>
+          <h3>Glowing Reputation</h3>
           <p>We've earned a solid reputation as one of the most trusted and reliable pet sitting and dog walking services with over 125+ 5 star reviews and thousands of satisfied clients.</p>
         </div>
         <div class="benefit-card">
           <img src="assets/images/icon-account.png" alt="" aria-hidden="true" loading="lazy">
-          <h4>Account Management</h4>
+          <h3>Account Management</h3>
           <p>You can access your account online or through our user-friendly app. You'll be able to manage your schedule, pet profiles, invoicing, and can communicate easily with us.</p>
         </div>
                 <div class="benefit-card">
           <img src="assets/images/icon-scheduling.png" alt="" aria-hidden="true" loading="lazy">
-          <h4>Easy Scheduling</h4>
+          <h3>Easy Scheduling</h3>
           <p>Easily request from your account through our scheduling software. You'll receive a confirmation of your request, assuring that your pets will be taken care of.</p>
         </div>
         <div class="benefit-card">
           <img src="assets/images/icon-multipet.png" alt="" aria-hidden="true" loading="lazy">
-          <h4>Cheaper for Multiple Pets</h4>
+          <h3>Cheaper for Multiple Pets</h3>
           <p><strong>We will never charge you extra for multiple pets.</strong> We charge based on time, not the number of pets you have.</p>
         </div>
         <div class="benefit-card">
           <img src="assets/images/icon-no-charges.png" alt="" aria-hidden="true" loading="lazy">
-          <h4>No Unnecessary Charges</h4>
+          <h3>No Unnecessary Charges</h3>
           <p>Don't pay for an extra day, like at the kennel, just because you came home on a weekend or evening.</p>
         </div>
         <div class="benefit-card">
           <img src="assets/images/icon-billing.png" alt="" aria-hidden="true" loading="lazy">
-          <h4>Easy Billing</h4>
+          <h3>Easy Billing</h3>
           <p>You'll have the option to pay, view, and automate your bills through your online account.</p>
         </div>
       </div>
@@ -400,23 +418,6 @@
         <button class="benefits-arrow" id="benefits-next" aria-label="Next benefit">&#8594;</button>
       </div>
 
-      <!-- Gallery Strip 1 -->
-      <div class="gallery-strip" role="region" aria-label="Pet care photo gallery">
-        <button class="gallery-arrow prev" id="gallery1-prev" aria-label="Previous photos">&#8592;</button>
-        <div class="gallery-strip-overflow">
-        <div class="gallery-strip-track" id="gallery1-track">
-          <img src="assets/images/gallery-1.webp" alt="Dog walking service in Waco TX" loading="lazy">
-          <img src="assets/images/gallery-2.webp" alt="Pet sitting service in Waco TX" loading="lazy">
-          <img src="assets/images/gallery-3.webp" alt="Happy pets with The Purr-fect Paw" loading="lazy">
-          <img src="assets/images/gallery-4.webp" alt="Dog walking in Central Texas" loading="lazy">
-          <img src="assets/images/gallery-5.webp" alt="In-home pet sitting Waco" loading="lazy">
-          <img src="assets/images/gallery-6.webp" alt="Professional dog care Waco TX" loading="lazy">
-          <img src="assets/images/gallery-7.webp" alt="Puppy care and sitting Waco" loading="lazy">
-          <img src="assets/images/gallery-8.webp" alt="Cat sitting service Waco TX" loading="lazy">
-        </div>
-        </div>
-        <button class="gallery-arrow next" id="gallery1-next" aria-label="Next photos">&#8594;</button>
-      </div>
     </div>
   </section>
 
@@ -585,7 +586,9 @@
           <a href="https://www.timetopet.com/portal/thepurrfectpaw/create-account" class="btn btn-outline-white" rel="noopener noreferrer" target="_blank">New Client — Free Meet &amp; Greet</a>
           <a href="https://www.timetopet.com/portal/thepurrfectpaw" class="btn btn-outline-white" rel="noopener noreferrer" target="_blank">Existing Client — Book Now</a>
         </div>
+        
       </div>
+      
 
       <!-- Discounts -->
       <div class="discounts-block">
@@ -594,6 +597,22 @@
         <p><strong>CASH DISCOUNT (5%) –</strong> Pay in cash and receive <strong>5%</strong> off your invoice.</p>
         <p><strong>ADDITIONAL 15 MINUTES</strong> – Need a little more time? Add an extra <strong>$12</strong> per 15-minute blocks</p>
         <p><strong>MULTIPLE PETS</strong> – No additional charge for multiple pets. Pricing is based on time, not the number of pets.</p>
+      </div>
+
+            <!-- Gallery Strip 2 -->
+      <div class="gallery-strip" role="region" aria-label="Pet care photo gallery">
+        <button class="gallery-arrow prev" id="gallery2-prev" aria-label="Previous photos">&#8592;</button>
+        <div class="gallery-strip-overflow"><div class="gallery-strip-track" id="gallery2-track">
+          <img src="assets/images/gallery-9.webp" alt="Dog walking service in Waco TX" loading="lazy">
+          <img src="assets/images/gallery-10.webp" alt="Pet sitting service in Waco TX" loading="lazy">
+          <img src="assets/images/gallery-11.webp" alt="Happy pets with The Purr-fect Paw" loading="lazy">
+          <img src="assets/images/gallery-12.webp" alt="Dog walking in Central Texas" loading="lazy">
+          <img src="assets/images/gallery-13.webp" alt="In-home pet sitting Waco" loading="lazy">
+          <img src="assets/images/gallery-14.webp" alt="Professional dog care Waco TX" loading="lazy">
+          <img src="assets/images/gallery-15.webp" alt="Puppy care and sitting Waco" loading="lazy">
+          <img src="assets/images/gallery-16.webp" alt="Cat sitting service Waco TX" loading="lazy">
+        </div></div>
+        <button class="gallery-arrow next" id="gallery2-next" aria-label="Next photos">&#8594;</button>
       </div>
 
   </section>
@@ -738,7 +757,7 @@
       <div class="area-content">
         <div class="area-maps">
           <div class="map-iframe-wrap">
-            <iframe id="area-map-iframe" src="https://www.google.com/maps/d/u/0/embed?mid=1mmcftffu2-iRQPPUZCgmcjRqUeQ&ehbc=2E312F&ll=31.38561,-97.3012984&z=9" width="100%" height="560" style="border:0; display:block; position:absolute; top:-60px;" allowfullscreen loading="lazy"></iframe>
+            <iframe id="area-map-iframe" title="The Purr-fect Paw Service Area Map" src="https://www.google.com/maps/d/u/0/embed?mid=1mmcftffu2-iRQPPUZCgmcjRqUeQ&ehbc=2E312F&ll=31.38561,-97.3012984&z=9" width="100%" height="560" style="border:0; display:block; position:absolute; top:-60px;" allowfullscreen loading="lazy"></iframe>
           </div>
         </div>
         <div class="area-info">
@@ -824,7 +843,7 @@
             <img src="assets/images/member-1.webp" alt="Justin G. Owner of The Purr-fect Paw" loading="lazy">
           </div>
           <div class="team-card-info">
-            <h4>Justin G.</h4>
+            <h3>Justin G.</h3>
             <p class="team-role">Owner</p>
             <p class="team-years">15+ Years</p>
           </div>
@@ -834,7 +853,7 @@
             <img src="assets/images/member-2.webp" alt="Tiffany M. Manager" loading="lazy">
           </div>
           <div class="team-card-info">
-            <h4>Tiffany M.</h4>
+            <h3>Tiffany M.</h3>
             <p class="team-role">Manager</p>
             <p class="team-years">10+ Years</p>
           </div>
@@ -844,7 +863,7 @@
             <img src="assets/images/member-3.webp" alt="Sharon U. Team Leader" loading="lazy">
           </div>
           <div class="team-card-info">
-            <h4>Sharon U.</h4>
+            <h3>Sharon U.</h3>
             <p class="team-role">Team Leader</p>
             <p class="team-years">8+ Years</p>
           </div>
@@ -854,7 +873,7 @@
             <img src="assets/images/member-4.webp" alt="Kayla G. Pet Sitter and Dog Walker" loading="lazy">
           </div>
           <div class="team-card-info">
-            <h4>Kayla G.</h4>
+            <h3>Kayla G.</h3>
             <p class="team-role">Pet Sitter / Dog Walker</p>
             <p class="team-years">8+ Years</p>
           </div>
@@ -864,7 +883,7 @@
             <img src="assets/images/member-5.webp" alt="Cheryl D. Pet Sitter and Dog Walker" loading="lazy">
           </div>
           <div class="team-card-info">
-            <h4>Cheryl D.</h4>
+            <h3>Cheryl D.</h3>
             <p class="team-role">Pet Sitter / Dog Walker</p>
             <p class="team-years">2+ Years</p>
           </div>
@@ -874,7 +893,7 @@
             <img src="assets/images/member-6.webp" alt="Karen K. Pet Sitter and Dog Walker" loading="lazy">
           </div>
           <div class="team-card-info">
-            <h4>Karen K.</h4>
+            <h3>Karen K.</h3>
             <p class="team-role">Pet Sitter / Dog Walker</p>
             <p class="team-years">3+ Years</p>
           </div>
@@ -884,7 +903,7 @@
             <img src="assets/images/member-7.webp" alt="Kirstin D. Pet Sitter and Dog Walker" loading="lazy">
           </div>
           <div class="team-card-info">
-            <h4>Kirstin D.</h4>
+            <h3>Kirstin D.</h3>
             <p class="team-role">Pet Sitter / Dog Walker</p>
             <p class="team-years">3+ Years</p>
           </div>
@@ -894,7 +913,7 @@
             <img src="assets/images/member-8.webp" alt="Elyse B. Pet Sitter and Dog Walker" loading="lazy">
           </div>
           <div class="team-card-info">
-            <h4>Elyse B.</h4>
+            <h3>Elyse B.</h3>
             <p class="team-role">Pet Sitter / Dog Walker</p>
             <p class="team-years">3+ Years</p>
           </div>
@@ -904,7 +923,7 @@
             <img src="assets/images/member-17.webp" alt="Elyse B. Pet Sitter and Dog Walker" loading="lazy">
           </div>
           <div class="team-card-info">
-            <h4>Savannah N.</h4>
+            <h3>Savannah N.</h3>
             <p class="team-role">Pet Sitter / Dog Walker</p>
             <p class="team-years">5+ Years</p>
           </div>
@@ -914,7 +933,7 @@
             <img src="assets/images/member-20.webp" alt="Elyse B. Pet Sitter and Dog Walker" loading="lazy">
           </div>
           <div class="team-card-info">
-            <h4>Korbin G.</h4>
+            <h3>Korbin G.</h3>
             <p class="team-role">Pet Sitter / Dog Walker</p>
             <p class="team-years">1+ Years</p>
           </div>
@@ -924,7 +943,7 @@
             <img src="assets/images/member-9.webp" alt="Cody H. Pet Sitter and Dog Walker" loading="lazy">
           </div>
           <div class="team-card-info">
-            <h4>Cody H.</h4>
+            <h3>Cody H.</h3>
             <p class="team-role">Pet Sitter / Dog Walker</p>
             <p class="team-years">2+ Years</p>
           </div>
@@ -934,7 +953,7 @@
             <img src="assets/images/member-10.webp" alt="Danielle P. Pet Sitter and Dog Walker" loading="lazy">
           </div>
           <div class="team-card-info">
-            <h4>Danielle P.</h4>
+            <h3>Danielle P.</h3>
             <p class="team-role">Pet Sitter / Dog Walker</p>
             <p class="team-years">3+ Years</p>
           </div>
@@ -945,7 +964,7 @@
             <img src="assets/images/member-11.webp" alt="Haylee B. Pet Sitter and Dog Walker" loading="lazy">
           </div>
           <div class="team-card-info">
-            <h4>Haylee B.</h4>
+            <h3>Haylee B.</h3>
             <p class="team-role">Pet Sitter / Dog Walker</p>
             <p class="team-years">1+ Years</p>
           </div>
@@ -955,7 +974,7 @@
             <img src="assets/images/member-16.webp" alt="Holly P. Pet Sitter and Dog Walker" loading="lazy">
           </div>
           <div class="team-card-info">
-            <h4>Holly P.</h4>
+            <h3>Holly P.</h3>
             <p class="team-role">Pet Sitter / Dog Walker</p>
             <p class="team-years">1+ Years</p>
           </div>
@@ -965,7 +984,7 @@
             <img src="assets/images/member-12.webp" alt="Elyse B. Pet Sitter and Dog Walker" loading="lazy">
           </div>
           <div class="team-card-info">
-            <h4>Easton C.</h4>
+            <h3>Easton C.</h3>
             <p class="team-role">Pet Sitter / Dog Walker</p>
             <p class="team-years">2+ Years</p>
           </div>
@@ -975,7 +994,7 @@
             <img src="assets/images/member-18.webp" alt="Holly P. Pet Sitter and Dog Walker" loading="lazy">
           </div>
           <div class="team-card-info">
-            <h4>Sarah B.</h4>
+            <h3>Sarah B.</h3>
             <p class="team-role">Pet Sitter / Dog Walker</p>
             <p class="team-years">1+ Years</p>
           </div>
@@ -985,7 +1004,7 @@
             <img src="assets/images/member-19.webp" alt="Holly P. Pet Sitter and Dog Walker" loading="lazy">
           </div>
           <div class="team-card-info">
-            <h4>Alyssa S.</h4>
+            <h3>Alyssa S.</h3>
             <p class="team-role">Pet Sitter / Dog Walker</p>
             <p class="team-years">3 Months+</p>
           </div>
@@ -999,21 +1018,6 @@
         <button class="slider-btn" id="team-next" aria-label="Next team members">&#8594;</button>
       </div>
     
-      <!-- Gallery Strip 2 -->
-      <div class="gallery-strip" role="region" aria-label="Pet care photo gallery">
-        <button class="gallery-arrow prev" id="gallery2-prev" aria-label="Previous photos">&#8592;</button>
-        <div class="gallery-strip-overflow"><div class="gallery-strip-track" id="gallery2-track">
-          <img src="assets/images/gallery-9.webp" alt="Dog walking service in Waco TX" loading="lazy">
-          <img src="assets/images/gallery-10.webp" alt="Pet sitting service in Waco TX" loading="lazy">
-          <img src="assets/images/gallery-11.webp" alt="Happy pets with The Purr-fect Paw" loading="lazy">
-          <img src="assets/images/gallery-12.webp" alt="Dog walking in Central Texas" loading="lazy">
-          <img src="assets/images/gallery-13.webp" alt="In-home pet sitting Waco" loading="lazy">
-          <img src="assets/images/gallery-14.webp" alt="Professional dog care Waco TX" loading="lazy">
-          <img src="assets/images/gallery-15.webp" alt="Puppy care and sitting Waco" loading="lazy">
-          <img src="assets/images/gallery-16.webp" alt="Cat sitting service Waco TX" loading="lazy">
-        </div></div>
-        <button class="gallery-arrow next" id="gallery2-next" aria-label="Next photos">&#8594;</button>
-      </div>
     </div>
   </section>
 
