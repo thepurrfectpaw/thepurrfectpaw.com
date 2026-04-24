@@ -697,6 +697,36 @@ p:last-child { margin-bottom: 0; }
 
 /* TEAM SLIDER */
 .team-slider-wrap { overflow: hidden; margin-bottom: 24px; }
+
+.team-slider-outer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.team-slider-outer .team-slider-wrap {
+  flex: 1;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+.team-slider-outer .gallery-arrow {
+  flex-shrink: 0;
+}
+
+.team-slider-outer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.team-slider-outer .team-slider-wrap {
+  flex: 1;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+.team-slider-outer .gallery-arrow {
+  flex-shrink: 0;
+}
 .team-track { display: flex; gap: 24px; transition: transform 0.5s ease; }
 .team-card {
   flex: 0 0 calc(20% - 20px);

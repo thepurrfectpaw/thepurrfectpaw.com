@@ -503,7 +503,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (teamTrack && teamCards.length) {
     var teamCurrent = 0;
-    var teamPerView = window.innerWidth < 400 ? 1 : window.innerWidth < 640 ? 2 : window.innerWidth < 900 ? 3 : 5;
+    var teamPerView = window.innerWidth < 640 ? 2 : window.innerWidth < 900 ? 3 : 5;
     var teamTotal = Math.ceil(teamCards.length / teamPerView);
 
     function buildTeamDots() {
@@ -533,8 +533,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     buildTeamDots();
 
+    var teamPrevArrow = document.getElementById('team-prev-arrow');
+    var teamNextArrow = document.getElementById('team-next-arrow');
     if (teamPrev) teamPrev.addEventListener('click', function() { goToTeam(teamCurrent - 1); });
     if (teamNext) teamNext.addEventListener('click', function() { goToTeam(teamCurrent + 1); });
+    if (teamPrevArrow) teamPrevArrow.addEventListener('click', function() { goToTeam(teamCurrent - 1); });
+    if (teamNextArrow) teamNextArrow.addEventListener('click', function() { goToTeam(teamCurrent + 1); });
 
     var teamTouchStartX = 0;
     teamTrack.addEventListener('touchstart', function(e) {
