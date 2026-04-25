@@ -156,6 +156,15 @@
       src="https://www.facebook.com/tr?id=871531419647687&ev=PageView&noscript=1">
   </noscript>
 
+<!-- Google Ads Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1013874033"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-1013874033');
+  </script>
+
 </head>
 <body>
 
@@ -836,7 +845,9 @@
       </div>
 
       <!-- Team Members Slider -->
-      <div class="team-slider-wrap" role="region" aria-label="Team members slider">
+      <div class="team-slider-outer">
+        <button class="gallery-arrow prev" id="team-prev-arrow" aria-label="Previous team members">&#8592;</button>
+        <div class="team-slider-wrap" role="region" aria-label="Team members slider">
         <div class="team-track">
         <div class="team-card">
           <div class="team-photo-wrap">
@@ -1011,11 +1022,12 @@
         </div>
       </div>
 
-      <!-- Team Slider Controls -->
+      </div><!-- close team-slider-wrap -->
+        <button class="gallery-arrow next" id="team-next-arrow" aria-label="Next team members">&#8594;</button>
+      </div><!-- close team-slider-outer -->
+      <!-- Team Slider Dots -->
       <div class="slider-controls" role="group" aria-label="Team slider controls">
-        <button class="slider-btn" id="team-prev" aria-label="Previous team members">&#8592;</button>
         <div class="slider-dots" id="team-dots"></div>
-        <button class="slider-btn" id="team-next" aria-label="Next team members">&#8594;</button>
       </div>
     
     </div>
