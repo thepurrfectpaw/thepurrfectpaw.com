@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       emailjs.send('service_enphpal', 'template_adppkl8', params)
         .then(function() {
-          return emailjs.send('service_enphpal', 'template_k796u3p', params);
+          return emailjs.send('service_enphpal', 'template_k796u3b', params);
         })
         .then(function() {
           btn.textContent = 'Message Sent! ✓';
@@ -389,7 +389,6 @@ document.addEventListener('DOMContentLoaded', function () {
       var disc = 0;
       if (state.pets === 'single') { disc += 0.10; lines.push('Single pet discount: −10%'); }
       if (isDogWalking && totalVisits >= 10) { disc += 0.05; lines.push('Daily discount (10+ walks): −5%'); }
-      if (state.payment === 'cash') { disc += 0.05; lines.push('Cash discount: −5%'); }
 
       var totalCost = base * (1 - disc);
       var perVisit = totalCost / totalVisits;
