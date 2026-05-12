@@ -1094,3 +1094,18 @@ body.dark-mode .discounts-block p strong { color: #e8eaf2; }
 body.dark-mode #dark-toggle { background: #3a4060; }
 body.dark-mode #dark-toggle:hover { background: #4a5070; }
 
+@media (max-width: 640px) {
+  .team-slider-outer .gallery-arrow {
+    display: none;
+  }
+  #team .slider-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+  #team .slider-controls .gallery-arrow {
+    display: flex;
+    flex-shrink: 0;
+  }
+}
