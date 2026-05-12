@@ -568,14 +568,7 @@
                 <button class="calc-toggle" data-calc="pets" data-value="single">1 Pet (−10%)</button>
               </div>
             </div>
-            <div class="calc-group">
-              <label class="calc-label">Payment</label>
-              <div class="calc-toggle-row">
-                <button class="calc-toggle active" data-calc="payment" data-value="card">Card</button>
-                <button class="calc-toggle" data-calc="payment" data-value="cash">Cash (−5%)</button>
-              </div>
             </div>
-          </div>
           <div class="calc-result">
             <div class="calc-breakdown" id="dw-breakdown"></div>
             <div class="calc-total-wrap">
@@ -1206,10 +1199,9 @@
               <span class="faq-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer">
-              Yes, we offer 3 different discounts!<br><br>
+              Yes, we offer 2 different discounts!<br><br>
               Single Pet Discount – Only have 1 pet? Take 10% off your entire invoice!<br><br>
-              Daily Discount – When scheduling 10+ visits in a single month, receive 5% off your invoice!<br><br>
-              Cash Discount – We also offer a 5% discount when you pay in cash.
+              Daily Discount – When scheduling 10+ visits in a single month, receive 5% off your invoice!
             </div>
           </div>
 
@@ -1263,15 +1255,8 @@
               <input type="tel" id="phone" name="phone" placeholder="(254) 000-0000" autocomplete="tel">
             </div>
             <div class="form-group">
-              <label for="service">Service Interested In</label>
-              <select id="service" name="service">
-                <option value="">Select a service…</option>
-                <option value="pet-sitting">Pet Sitting / Cat Care</option>
-                <option value="dog-walking">Dog Walking</option>
-                <option value="potty-break">Potty Break</option>
-                <option value="meet-greet">Free Meet &amp; Greet</option>
-                <option value="other">Other / General Question</option>
-              </select>
+              <label for="address">Home Address</label>
+              <input type="text" id="address" name="address" placeholder="123 Main St, Waco, TX" autocomplete="street-address">
             </div>
             <div class="form-group">
               <label for="message">Message</label>

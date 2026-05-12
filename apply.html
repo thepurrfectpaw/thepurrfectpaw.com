@@ -544,8 +544,13 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Init EmailJS — same key as main site
+    emailjs.init('Kg2d5VZ_mDuqk7Lfa');
+
     var form = document.getElementById('apply-form');
     if (form) {
       form.addEventListener('submit', function(e) {
@@ -553,12 +558,49 @@
         var btn = form.querySelector('button[type="submit"]');
         btn.textContent = 'Submitting…';
         btn.disabled = true;
-        setTimeout(function() {
-          btn.textContent = 'Application Submitted! ✓';
-          form.reset();
-        }, 1200);
+
+        // Collect checkbox groups as comma-separated strings
+        function getChecked(name) {
+          return Array.from(form.querySelectorAll('input[name="' + name + '"]:checked'))
+                      .map(function(el) { return el.value; }).join(', ') || 'None selected';
+        }
+
+        var params = {
+          applicant_name:   form.querySelector('#a-name')       ? form.querySelector('#a-name').value       : '',
+          applicant_email:  form.querySelector('#a-email')      ? form.querySelector('#a-email').value      : '',
+          applicant_phone:  form.querySelector('#a-phone')      ? form.querySelector('#a-phone').value      : '',
+          city:             form.querySelector('#a-city')        ? form.querySelector('#a-city').value        : '',
+          zip:              form.querySelector('#a-zip')         ? form.querySelector('#a-zip').value         : '',
+          has_car:          form.querySelector('[name="has_car"]')         ? form.querySelector('[name="has_car"]').value         : '',
+          has_pets:         form.querySelector('[name="has_pets"]')        ? form.querySelector('[name="has_pets"]').value        : '',
+          pet_types:        getChecked('pet_types[]'),
+          holidays:         getChecked('holidays[]'),
+          shifts:           getChecked('shifts[]'),
+          hours:            getChecked('hours[]'),
+          schedule:         form.querySelector('#a-schedule')    ? form.querySelector('#a-schedule').value    : '',
+          why:              form.querySelector('#a-why')         ? form.querySelector('#a-why').value         : '',
+          disobedient_dogs: form.querySelector('#a-disobedient') ? form.querySelector('#a-disobedient').value : '',
+          experience:       form.querySelector('#a-experience')  ? form.querySelector('#a-experience').value  : '',
+          why_choose:       form.querySelector('#a-why-choose')  ? form.querySelector('#a-why-choose').value  : ''
+        };
+
+        emailjs.send('service_enphpal', 'template_e4kabcb', params)
+          .then(function() {
+            btn.textContent = 'Application Submitted! ✓';
+            form.reset();
+            setTimeout(function() {
+              btn.textContent = 'Submit Application 🐾';
+              btn.disabled = false;
+            }, 4000);
+          })
+          .catch(function(err) {
+            console.error('EmailJS error:', err);
+            btn.textContent = 'Error — please email us directly';
+            btn.disabled = false;
+          });
       });
     }
+
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(function(link) {
       link.addEventListener('click', function(e) {
