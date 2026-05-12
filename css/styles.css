@@ -740,7 +740,7 @@ p:last-child { margin-bottom: 0; }
 }
 @media (max-width: 900px) { .team-card { flex: 0 0 calc(33.333% - 16px); min-width: calc(33.333% - 16px); } }
 @media (max-width: 640px) { .team-card { flex: 0 0 calc(50% - 12px); min-width: calc(50% - 12px); } }
-@media (max-width: 400px) { .team-card { flex: 0 0 calc(80% - 12px); min-width: calc(80% - 12px); } }
+@media (max-width: 400px) { .team-card { flex: 0 0 calc(50% - 12px); min-width: calc(50% - 12px); } }
 .team-card {
   text-align: center;
   background: rgba(255,255,255,0.1);
