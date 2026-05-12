@@ -185,14 +185,11 @@ document.addEventListener('DOMContentLoaded', function () {
         name:    contactForm.querySelector('#name').value,
         email:   contactForm.querySelector('#email').value,
         phone:   contactForm.querySelector('#phone').value,
-        service: contactForm.querySelector('#service').value,
+        address: contactForm.querySelector('#address') ? contactForm.querySelector('#address').value : '',
         message: contactForm.querySelector('#message').value
       };
 
       emailjs.send('service_enphpal', 'template_adppkl8', params)
-        .then(function() {
-          return emailjs.send('service_enphpal', 'template_k796u3b', params);
-        })
         .then(function() {
           btn.textContent = 'Message Sent! ✓';
           contactForm.reset();
