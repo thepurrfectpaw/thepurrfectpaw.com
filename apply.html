@@ -6,6 +6,14 @@
   <title>Join Our Team | The Purr-fect Paw | Waco, TX</title>
   <meta name="description" content="Join The Purr-fect Paw team as a pet sitter and dog walker in Waco, TX. Flexible schedule, great pay, and all the pet cuddles you can handle.">
   <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <script>
+    try {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    } catch (e) {}
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -175,6 +183,37 @@
     .footer-col ul a:hover { color: var(--white); }
     .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 22px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 0.8rem; }
 
+    /* DARK MODE */
+    html[data-theme="dark"] {
+      --off-white:  #1a1e29;
+      --blue-light: #232a3d;
+      --gray-mid:   #2f3546;
+      --text:       #e6e9f2;
+      --text-light: #a9b0c5;
+    }
+    html[data-theme="dark"] body { background: #14171f; }
+    html[data-theme="dark"] #navbar { background: #14171f; border-bottom-color: #2f3546; }
+    html[data-theme="dark"] .duty-item,
+    html[data-theme="dark"] .apply-form-wrap { background: #1a1e29; }
+    html[data-theme="dark"] .form-group input,
+    html[data-theme="dark"] .form-group select,
+    html[data-theme="dark"] .form-group textarea { background: #14171f; }
+    html[data-theme="dark"] .form-group input:focus,
+    html[data-theme="dark"] .form-group select:focus,
+    html[data-theme="dark"] .form-group textarea:focus { background: #1f2431; }
+    html[data-theme="dark"] .btn-outline { color: #8fb2ee; border-color: #8fb2ee; }
+    html[data-theme="dark"] .btn-outline:hover { background: var(--blue); color: #fff; border-color: var(--blue); }
+    html[data-theme="dark"] .section-header h2,
+    html[data-theme="dark"] .intro-content h3,
+    html[data-theme="dark"] .apply-form-wrap h3,
+    html[data-theme="dark"] .form-section-title,
+    html[data-theme="dark"] .section-label { color: #8fb2ee; }
+    html[data-theme="dark"] .section-blue .section-header h2 { color: #fff; }
+    html[data-theme="dark"] .section-blue .section-label { color: rgba(255,255,255,0.9); }
+
+    #dark-toggle { position: fixed; bottom: 24px; right: 24px; width: 46px; height: 46px; border-radius: 50%; border: none; background: var(--blue); color: #fff; font-size: 1.2rem; cursor: pointer; box-shadow: var(--shadow-lg); z-index: 200; transition: background var(--transition); }
+    #dark-toggle:hover { background: var(--blue-dark); }
+
     @media (max-width: 900px) {
       .pay-grid { grid-template-columns: repeat(3, 1fr); }
       .duties-grid, .req-list, .raises-grid { grid-template-columns: 1fr; }
@@ -311,7 +350,7 @@
         </div>
         <div class="pay-card">
           <span class="duration">45 Minute Visit</span>
-          <span class="amount">$13</span>
+          <span class="amount">$12</span>
           <span class="per">per visit</span>
         </div>
       </div>
@@ -330,8 +369,8 @@
 
       <div class="perks-grid">
         <div class="perk-item"><span class="perk-icon">🎄</span><strong>Holiday Bonus</strong>$7 &amp; $15 extra per visit on minor &amp; major holidays (Thanksgiving, Christmas Eve &amp; Day)</div>
-        <div class="perk-item"><span class="perk-icon">⚡</span><strong>Next-Day Request</strong>$10 extra per visit when you accept</div>
-        <div class="perk-item"><span class="perk-icon">🚀</span><strong>Same-Day Request</strong>$15 extra per visit when you accept</div>
+        <div class="perk-item"><span class="perk-icon">⚡</span><strong>Rush Booking Fee</strong>$10 extra for next day and $15 extra same day per visit when you accept</div>
+        <div class="perk-item"><span class="perk-icon">🚀</span><strong>Early/Late Visits</strong>$7 extra per visits for before 7AM & after 10PM visits.</div>
         <div class="perk-item"><span class="perk-icon">🐶</span><strong>50% Staff Discount</strong>Use our services at half price</div>
         <div class="perk-item"><span class="perk-icon">💰</span><strong>Tax-Free Mileage</strong>All gas reimbursement is tax-free</div>
         <div class="perk-item"><span class="perk-icon">😻</span><strong>Unlimited Cuddles</strong>Slobbery kisses, head butts &amp; purrs</div>
@@ -344,10 +383,10 @@
         <div class="raise-card"><span class="raise-period">2nd Raise — 500 Completed Sits</span><span class="raise-amount">+$0.50 per visit</span></div>
         <div class="raise-card"><span class="raise-period">3rd Raise — 1,000 Completed Sits</span><span class="raise-amount">+$0.50 per visit</span></div>
         <div class="raise-card"><span class="raise-period">4th Raise — 1,500 Completed Sits</span><span class="raise-amount">+$0.50 per visit</span></div>
-        <div class="raise-card"><span class="raise-period">5th Raise — 2,000 Completed Sits</span><span class="raise-amount">+$0.50 per visit</span></div>
-        <div class="raise-card"><span class="raise-period">6th Raise — 3,000 Completed Sits</span><span class="raise-amount">+$0.50 per visit</span></div>
-        <div class="raise-card"><span class="raise-period">7th Raise — 4,000 Completed Sits</span><span class="raise-amount">+$0.50 per visit</span></div>
-        <div class="raise-card"><span class="raise-period">8th Raise — 5,000+ Completed Sits</span><span class="raise-amount">+$0.50 per visit</span></div>
+        <div class="raise-card"><span class="raise-period">5th Raise — 2,000 Completed Sits</span><span class="raise-amount">+$0.50 per visit (Excludes 15-Minute Visits)</span></div>
+        <div class="raise-card"><span class="raise-period">6th Raise — 3,000 Completed Sits</span><span class="raise-amount">+$0.50 per visit (Excludes 15-Minute Visits)</span></div>
+        <div class="raise-card"><span class="raise-period">7th Raise — 4,000 Completed Sits</span><span class="raise-amount">+$0.50 per visit (Excludes 15-Minute Visits)</span></div>
+        <div class="raise-card"><span class="raise-period">8th Raise — 5,000+ Completed Sits</span><span class="raise-amount">+$0.50 per visit (Excludes 15-Minute Visits)</span></div>
       </div>
 
       <p style="text-align:center; color:rgba(255,255,255,0.65); font-size:0.85rem; margin-top:20px;">The fastest way to earn raises: show genuine love for animals, be flexible and available, respond promptly, and be reliable and accountable.</p>
@@ -549,9 +588,34 @@
     </div>
   </footer>
 
+  <button id="dark-toggle" aria-label="Toggle dark mode">🌙</button>
+
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Dark mode toggle
+    (function() {
+      var KEY = 'theme';
+      var btn = document.getElementById('dark-toggle');
+      function apply(mode) {
+        if (mode === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          btn.textContent = '☀️';
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+          btn.textContent = '🌙';
+        }
+      }
+      var saved = null;
+      try { saved = localStorage.getItem(KEY); } catch (e) {}
+      apply(saved || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+      btn.addEventListener('click', function() {
+        var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        apply(next);
+        try { localStorage.setItem(KEY, next); } catch (e) {}
+      });
+    })();
 
     // Init EmailJS — same key as main site
     emailjs.init('Kg2d5VZ_mDuqk7Lfa');
