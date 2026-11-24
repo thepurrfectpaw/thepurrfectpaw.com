@@ -541,6 +541,15 @@
             </div>
           </div>
 
+          <!-- Honeypot: hidden from humans, bots fill it in -->
+          <div style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;" aria-hidden="true">
+            <label for="a-website">Leave this field empty</label>
+            <input type="text" id="a-website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="g-recaptcha" data-sitekey="6LcPliUUAAAAADmJtTse7lafl6cAknMUax9ORYrp" style="margin-top:24px;"></div>
+          <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
           <div class="apply-submit">
             <button type="submit" class="btn btn-primary">Submit Application &#128062;</button>
           </div>
@@ -621,10 +630,34 @@
     emailjs.init('Kg2d5VZ_mDuqk7Lfa');
 
     var form = document.getElementById('apply-form');
+    var formLoadedAt = Date.now();
     if (form) {
       form.addEventListener('submit', function(e) {
         e.preventDefault();
         var btn = form.querySelector('button[type="submit"]');
+
+        // Spam checks: honeypot filled or submitted too fast = bot
+        var honeypot = form.querySelector('#a-website');
+        var tooFast = (Date.now() - formLoadedAt) < 10000;
+        if ((honeypot && honeypot.value) || tooFast) {
+          btn.textContent = 'Application Submitted! ✓';
+          btn.disabled = true;
+          return; // fake success, nothing sent
+        }
+
+        // Enforce required fields (form uses novalidate)
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        var captcha = grecaptcha.getResponse();
+        if (!captcha) {
+          btn.textContent = 'Please check "I\'m not a robot"';
+          setTimeout(function() { btn.textContent = 'Submit Application 🐾'; }, 3000);
+          return;
+        }
+
         btn.textContent = 'Submitting…';
         btn.disabled = true;
 
@@ -651,13 +684,15 @@
           why:               form.querySelector('#a-why')         ? form.querySelector('#a-why').value         : '',
           disobedient_dogs:  form.querySelector('#a-disobedient') ? form.querySelector('#a-disobedient').value : '',
           experience:        form.querySelector('#a-experience')  ? form.querySelector('#a-experience').value  : '',
-          why_choose:        form.querySelector('#a-why-choose')  ? form.querySelector('#a-why-choose').value  : ''
+          why_choose:        form.querySelector('#a-why-choose')  ? form.querySelector('#a-why-choose').value  : '',
+          'g-recaptcha-response': captcha
         };
 
         emailjs.send('service_enphpal', 'template_e4kabcb', params)
           .then(function() {
             btn.textContent = 'Application Submitted! ✓';
             form.reset();
+            grecaptcha.reset();
             setTimeout(function() {
               btn.textContent = 'Submit Application 🐾';
               btn.disabled = false;
@@ -666,6 +701,7 @@
           .catch(function(err) {
             console.error('EmailJS error:', err);
             btn.textContent = 'Error — please email us directly';
+            grecaptcha.reset();
             btn.disabled = false;
           });
       });
