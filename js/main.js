@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function () {
           }, 3000);
         })
         .catch(function(err) {
-          console.error('EmailJS error:', err);
+          console.error('EmailJS error:', err.status, err.text);
           btn.textContent = 'Error — please call us';
           grecaptcha.reset();
           btn.disabled = false;
