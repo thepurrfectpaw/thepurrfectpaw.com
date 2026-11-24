@@ -173,11 +173,35 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   var contactForm = document.getElementById('contact-form');
+  var contactLoadedAt = Date.now();
   if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
       var btn = contactForm.querySelector('button[type="submit"]');
       var original = btn.textContent;
+
+      // Spam checks: honeypot filled or submitted too fast = bot
+      var honeypot = contactForm.querySelector('#website');
+      var tooFast = (Date.now() - contactLoadedAt) < 4000;
+      if ((honeypot && honeypot.value) || tooFast) {
+        btn.textContent = 'Message Sent! ✓';
+        btn.disabled = true;
+        return; // fake success, nothing sent
+      }
+
+      // Enforce required fields
+      if (!contactForm.checkValidity()) {
+        contactForm.reportValidity();
+        return;
+      }
+
+      var captcha = grecaptcha.getResponse();
+      if (!captcha) {
+        btn.textContent = 'Please check "I\'m not a robot"';
+        setTimeout(function() { btn.textContent = original; }, 3000);
+        return;
+      }
+
       btn.textContent = 'Sending…';
       btn.disabled = true;
 
@@ -186,13 +210,15 @@ document.addEventListener('DOMContentLoaded', function () {
         email:   contactForm.querySelector('#email').value,
         phone:   contactForm.querySelector('#phone').value,
         address: contactForm.querySelector('#address') ? contactForm.querySelector('#address').value : '',
-        message: contactForm.querySelector('#message').value
+        message: contactForm.querySelector('#message').value,
+        'g-recaptcha-response': captcha
       };
 
       emailjs.send('service_enphpal', 'template_adppkl8', params)
         .then(function() {
           btn.textContent = 'Message Sent! ✓';
           contactForm.reset();
+          grecaptcha.reset();
           setTimeout(function() {
             btn.textContent = original;
             btn.disabled = false;
@@ -201,6 +227,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .catch(function(err) {
           console.error('EmailJS error:', err);
           btn.textContent = 'Error — please call us';
+          grecaptcha.reset();
           btn.disabled = false;
         });
     });
